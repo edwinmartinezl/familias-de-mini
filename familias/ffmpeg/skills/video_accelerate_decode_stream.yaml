@@ -1,0 +1,22 @@
+mini_number: 144
+mini_name: 'Mini 144 #2FBF71'
+family_type: ffmpeg
+family_color_hex: '#2FBF71'
+skill_key: video_accelerate_decode_stream
+classification: core
+cost_class: gpu
+engine_action: accelerate_video_decode
+input_schema: ../schemas/video_accelerate_decode_stream.input.json
+output_schema: ../schemas/video_accelerate_decode_stream.output.json
+description: Usa aceleracion de hardware para rutas soportadas de decodificacion de
+  video.
+source_module: ffmpeg.cli
+source_symbol: -hwaccel
+source_kind: cli_option
+evidence_source:
+- ffmpeg -h full
+derivation_notes: Derivada de la opcion publica -hwaccel.
+input_type: file_path
+output_type: file_path
+artifact_kind: video
+mime_family: video/*

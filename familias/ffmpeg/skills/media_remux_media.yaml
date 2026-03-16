@@ -1,0 +1,23 @@
+mini_number: 133
+mini_name: 'Mini 133 #2FBF71'
+family_type: ffmpeg
+family_color_hex: '#2FBF71'
+skill_key: media_remux_media
+classification: core
+cost_class: io
+engine_action: remux_media
+input_schema: ../schemas/media_remux_media.input.json
+output_schema: ../schemas/media_remux_media.output.json
+description: Reempaqueta media en otro contenedor sin recodificar los streams.
+source_module: ffmpeg.cli
+source_symbol: -f fmt + -codec copy
+source_kind: cli_option_group
+evidence_source:
+- ffmpeg -h full
+- ffmpeg -formats
+derivation_notes: Derivada de la opcion publica -f para forzar formato y de las opciones
+  codec=copy para preservar los streams.
+input_type: file_path
+output_type: file_path
+artifact_kind: media
+mime_family: application/*

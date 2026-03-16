@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "audio_resample_audio input",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "input_file": {
+      "type": "string",
+      "description": "Primary audio source path or URL."
+    },
+    "output_file": {
+      "type": "string"
+    },
+    "sample_rate": {
+      "type": [
+        "integer",
+        "string"
+      ]
+    }
+  },
+  "required": [
+    "input_file",
+    "output_file"
+  ]
+}

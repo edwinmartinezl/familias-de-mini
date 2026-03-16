@@ -1,0 +1,19 @@
+mini_number: 138
+mini_name: 'Mini 138 #2FBF71'
+family_type: ffmpeg
+family_color_hex: '#2FBF71'
+skill_key: progress_report_status
+classification: core
+cost_class: cpu
+engine_action: report_progress
+input_schema: ../schemas/progress_report_status.input.json
+output_schema: ../schemas/progress_report_status.output.json
+description: Emite progreso legible por maquina durante la ejecucion.
+source_module: ffmpeg.cli
+source_symbol: -progress
+source_kind: cli_option
+evidence_source:
+- ffmpeg -h long
+derivation_notes: Derivada de la opcion publica -progress url.
+input_type: file_path
+output_type: json

@@ -1,0 +1,823 @@
+{
+  "family": "ffmpeg",
+  "generated_at": "2026-03-12T21:33:24.468191+00:00",
+  "certification_scope": "state_30_certified_active_view",
+  "flows": [
+    {
+      "flow_key": "audio_convert_audio",
+      "display_name": "Audio Convert Audio",
+      "description": "Convierte un audio a otro formato o codec de audio.",
+      "mini_path": [
+        109
+      ],
+      "skill_path": [
+        "audio_convert_audio"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "audio_decode_stream",
+      "display_name": "Audio Decode Stream",
+      "description": "Decodifica audio de entrada hacia un flujo interno procesable.",
+      "mini_path": [
+        110
+      ],
+      "skill_path": [
+        "audio_decode_stream"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "audio_encode_mp3",
+      "display_name": "Audio Encode Mp3",
+      "description": "Genera una salida MP3 desde audio de entrada.",
+      "mini_path": [
+        111
+      ],
+      "skill_path": [
+        "audio_encode_mp3"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "audio_encode_wav",
+      "display_name": "Audio Encode Wav",
+      "description": "Genera una salida WAV desde audio de entrada.",
+      "mini_path": [
+        112
+      ],
+      "skill_path": [
+        "audio_encode_wav"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "audio_filter_audio",
+      "display_name": "Audio Filter Audio",
+      "description": "Aplica un grafo de filtros de audio a una entrada de audio.",
+      "mini_path": [
+        113
+      ],
+      "skill_path": [
+        "audio_filter_audio"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "audio_map_output",
+      "display_name": "Audio Map Output",
+      "description": "Selecciona y enruta streams de audio especificos hacia la salida.",
+      "mini_path": [
+        114
+      ],
+      "skill_path": [
+        "audio_map_output"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "json"
+      ]
+    },
+    {
+      "flow_key": "audio_merge_audio",
+      "display_name": "Audio Merge Audio",
+      "description": "Fusiona multiples entradas de audio en una salida multicanal.",
+      "mini_path": [
+        115
+      ],
+      "skill_path": [
+        "audio_merge_audio"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "audio_mix_audio",
+      "display_name": "Audio Mix Audio",
+      "description": "Mezcla varias entradas de audio en una sola salida.",
+      "mini_path": [
+        116
+      ],
+      "skill_path": [
+        "audio_mix_audio"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "audio_resample_audio",
+      "display_name": "Audio Resample Audio",
+      "description": "Re-muestrea audio a otra frecuencia o configuracion compatible.",
+      "mini_path": [
+        117
+      ],
+      "skill_path": [
+        "audio_resample_audio"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "audio_trim_audio",
+      "display_name": "Audio Trim Audio",
+      "description": "Recorta un segmento continuo de audio.",
+      "mini_path": [
+        118
+      ],
+      "skill_path": [
+        "audio_trim_audio"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "audio_volume_audio",
+      "display_name": "Audio Volume Audio",
+      "description": "Ajusta el volumen del audio de entrada.",
+      "mini_path": [
+        119
+      ],
+      "skill_path": [
+        "audio_volume_audio"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "concat_script_concatenate_media",
+      "display_name": "Concat Script Concatenate Media",
+      "description": "Concatena entradas segun un script ffconcat.",
+      "mini_path": [
+        120
+      ],
+      "skill_path": [
+        "concat_script_concatenate_media"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "frame_encode_image",
+      "display_name": "Frame Encode Image",
+      "description": "Codifica frames hacia salidas de imagen.",
+      "mini_path": [
+        121
+      ],
+      "skill_path": [
+        "frame_encode_image"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "image_convert_image",
+      "display_name": "Image Convert Image",
+      "description": "Convierte una imagen a otra salida de imagen.",
+      "mini_path": [
+        122
+      ],
+      "skill_path": [
+        "image_convert_image"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "image_decode_frame",
+      "display_name": "Image Decode Frame",
+      "description": "Decodifica imagenes hacia frames internos para procesamiento posterior.",
+      "mini_path": [
+        123
+      ],
+      "skill_path": [
+        "image_decode_frame"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "json"
+      ]
+    },
+    {
+      "flow_key": "image_encode_apng",
+      "display_name": "Image Encode Apng",
+      "description": "Genera una salida APNG desde imagenes o frames de entrada.",
+      "mini_path": [
+        124
+      ],
+      "skill_path": [
+        "image_encode_apng"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "image_encode_gif",
+      "display_name": "Image Encode Gif",
+      "description": "Genera una salida GIF desde imagen o frame de entrada.",
+      "mini_path": [
+        125
+      ],
+      "skill_path": [
+        "image_encode_gif"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "image_sequence_encode_video",
+      "display_name": "Image Sequence Encode Video",
+      "description": "Codifica una secuencia de imagenes como video.",
+      "mini_path": [
+        127
+      ],
+      "skill_path": [
+        "image_sequence_encode_video"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "media_compose_filtergraph_media",
+      "display_name": "Media Compose Filtergraph Media",
+      "description": "Compone un filtergraph complejo sobre multiples flujos de media.",
+      "mini_path": [
+        128
+      ],
+      "skill_path": [
+        "media_compose_filtergraph_media"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "media_loop_media",
+      "display_name": "Media Loop Media",
+      "description": "Repite una entrada multimedia antes de procesarla.",
+      "mini_path": [
+        130
+      ],
+      "skill_path": [
+        "media_loop_media"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "media_package_dash_playlist",
+      "display_name": "Media Package Dash Playlist",
+      "description": "Empaqueta media en manifiestos y segmentos MPEG-DASH.",
+      "mini_path": [
+        131
+      ],
+      "skill_path": [
+        "media_package_dash_playlist"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "media_package_hls_playlist",
+      "display_name": "Media Package Hls Playlist",
+      "description": "Empaqueta media en playlist HLS y sus segmentos asociados.",
+      "mini_path": [
+        132
+      ],
+      "skill_path": [
+        "media_package_hls_playlist"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "media_remux_media",
+      "display_name": "Media Remux Media",
+      "description": "Reempaqueta media en otro contenedor sin recodificar los streams.",
+      "mini_path": [
+        133
+      ],
+      "skill_path": [
+        "media_remux_media"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "metadata_copy_media",
+      "display_name": "Metadata Copy Media",
+      "description": "Copia metadata desde una entrada hacia una salida multimedia.",
+      "mini_path": [
+        136
+      ],
+      "skill_path": [
+        "metadata_copy_media"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "metadata_write_media",
+      "display_name": "Metadata Write Media",
+      "description": "Escribe o sobrescribe metadata en una salida multimedia.",
+      "mini_path": [
+        137
+      ],
+      "skill_path": [
+        "metadata_write_media"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "progress_report_status",
+      "display_name": "Progress Report Status",
+      "description": "Emite progreso legible por maquina durante la ejecucion.",
+      "mini_path": [
+        138
+      ],
+      "skill_path": [
+        "progress_report_status"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "json"
+      ]
+    },
+    {
+      "flow_key": "stream_copy_stream",
+      "display_name": "Stream Copy Stream",
+      "description": "Copia streams sin recodificar, preservando el contenido codificado original.",
+      "mini_path": [
+        139
+      ],
+      "skill_path": [
+        "stream_copy_stream"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "stream_encode_audio",
+      "display_name": "Stream Encode Audio",
+      "description": "Codifica un flujo interno hacia un archivo o flujo de audio.",
+      "mini_path": [
+        140
+      ],
+      "skill_path": [
+        "stream_encode_audio"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "stream_encode_video",
+      "display_name": "Stream Encode Video",
+      "description": "Codifica un flujo interno hacia un archivo o flujo de video.",
+      "mini_path": [
+        141
+      ],
+      "skill_path": [
+        "stream_encode_video"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "stream_forward_stream",
+      "display_name": "Stream Forward Stream",
+      "description": "Reenvia un stream hacia otro destino de red sin necesidad de transformarlo.",
+      "mini_path": [
+        142
+      ],
+      "skill_path": [
+        "stream_forward_stream"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "subtitle_burn_video",
+      "display_name": "Subtitle Burn Video",
+      "description": "Inserta subtitulos renderizados dentro del video.",
+      "mini_path": [
+        143
+      ],
+      "skill_path": [
+        "subtitle_burn_video"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "video_accelerate_decode_stream",
+      "display_name": "Video Accelerate Decode Stream",
+      "description": "Usa aceleracion de hardware para rutas soportadas de decodificacion de video.",
+      "mini_path": [
+        144
+      ],
+      "skill_path": [
+        "video_accelerate_decode_stream"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "video_convert_video",
+      "display_name": "Video Convert Video",
+      "description": "Convierte un video a otro formato o codec de video.",
+      "mini_path": [
+        145
+      ],
+      "skill_path": [
+        "video_convert_video"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "video_crop_video",
+      "display_name": "Video Crop Video",
+      "description": "Recorta el area visible de un video.",
+      "mini_path": [
+        146
+      ],
+      "skill_path": [
+        "video_crop_video"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "video_decode_stream",
+      "display_name": "Video Decode Stream",
+      "description": "Decodifica video de entrada hacia un flujo interno procesable.",
+      "mini_path": [
+        147
+      ],
+      "skill_path": [
+        "video_decode_stream"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "video_encode_mp4",
+      "display_name": "Video Encode Mp4",
+      "description": "Genera una salida MP4 desde video de entrada.",
+      "mini_path": [
+        148
+      ],
+      "skill_path": [
+        "video_encode_mp4"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "video_encode_webm",
+      "display_name": "Video Encode Webm",
+      "description": "Genera una salida WebM desde video de entrada.",
+      "mini_path": [
+        149
+      ],
+      "skill_path": [
+        "video_encode_webm"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "video_encode_webm_1080p",
+      "display_name": "Video Encode Webm 1080p",
+      "description": "Aplica el preset fisico de FFmpeg para codificacion WebM 1080p.",
+      "mini_path": [
+        158
+      ],
+      "skill_path": [
+        "video_encode_webm_1080p"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "video_encode_webm_360p",
+      "display_name": "Video Encode Webm 360p",
+      "description": "Aplica el preset fisico de FFmpeg para codificacion WebM 360p.",
+      "mini_path": [
+        159
+      ],
+      "skill_path": [
+        "video_encode_webm_360p"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "video_encode_webm_720p",
+      "display_name": "Video Encode Webm 720p",
+      "description": "Aplica el preset fisico de FFmpeg para codificacion WebM 720p.",
+      "mini_path": [
+        160
+      ],
+      "skill_path": [
+        "video_encode_webm_720p"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "video_extract_audio",
+      "display_name": "Video Extract Audio",
+      "description": "Extrae audio desde una fuente de video.",
+      "mini_path": [
+        150
+      ],
+      "skill_path": [
+        "video_extract_audio"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "video_extract_image",
+      "display_name": "Video Extract Image",
+      "description": "Extrae uno o varios frames de video como imagenes.",
+      "mini_path": [
+        151
+      ],
+      "skill_path": [
+        "video_extract_image"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "video_filter_video",
+      "display_name": "Video Filter Video",
+      "description": "Aplica un grafo de filtros de video a una entrada de video.",
+      "mini_path": [
+        152
+      ],
+      "skill_path": [
+        "video_filter_video"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "video_map_output",
+      "display_name": "Video Map Output",
+      "description": "Selecciona y enruta streams de video especificos hacia la salida.",
+      "mini_path": [
+        153
+      ],
+      "skill_path": [
+        "video_map_output"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "json"
+      ]
+    },
+    {
+      "flow_key": "video_overlay_video",
+      "display_name": "Video Overlay Video",
+      "description": "Superpone una fuente de video sobre otra.",
+      "mini_path": [
+        154
+      ],
+      "skill_path": [
+        "video_overlay_video"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "video_rate_video",
+      "display_name": "Video Rate Video",
+      "description": "Cambia la tasa de frames de un video.",
+      "mini_path": [
+        155
+      ],
+      "skill_path": [
+        "video_rate_video"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "video_scale_video",
+      "display_name": "Video Scale Video",
+      "description": "Escala video a otro tamano o resolucion.",
+      "mini_path": [
+        156
+      ],
+      "skill_path": [
+        "video_scale_video"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    },
+    {
+      "flow_key": "video_trim_video",
+      "display_name": "Video Trim Video",
+      "description": "Recorta un segmento continuo de video.",
+      "mini_path": [
+        157
+      ],
+      "skill_path": [
+        "video_trim_video"
+      ],
+      "input_types": [
+        "file_path"
+      ],
+      "output_types": [
+        "file_path"
+      ]
+    }
+  ]
+}

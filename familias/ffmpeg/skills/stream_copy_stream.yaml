@@ -1,0 +1,20 @@
+mini_number: 139
+mini_name: 'Mini 139 #2FBF71'
+family_type: ffmpeg
+family_color_hex: '#2FBF71'
+skill_key: stream_copy_stream
+classification: core
+cost_class: io
+engine_action: copy_stream
+input_schema: ../schemas/stream_copy_stream.input.json
+output_schema: ../schemas/stream_copy_stream.output.json
+description: Copia streams sin recodificar, preservando el contenido codificado original.
+source_module: ffmpeg.cli
+source_symbol: -codec / -vcodec / -acodec / -scodec = copy
+source_kind: cli_option_group
+evidence_source:
+- ffmpeg -h full
+derivation_notes: Derivada de las opciones publicas de codec que aceptan el valor
+  copy para stream copy.
+input_type: file_path
+output_type: file_path

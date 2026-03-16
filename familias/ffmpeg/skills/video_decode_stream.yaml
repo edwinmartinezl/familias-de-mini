@@ -1,0 +1,23 @@
+mini_number: 147
+mini_name: 'Mini 147 #2FBF71'
+family_type: ffmpeg
+family_color_hex: '#2FBF71'
+skill_key: video_decode_stream
+classification: core
+cost_class: cpu
+engine_action: decode_video
+input_schema: ../schemas/video_decode_stream.input.json
+output_schema: ../schemas/video_decode_stream.output.json
+description: Decodifica video de entrada hacia un flujo interno procesable.
+source_module: ffmpeg.codecs
+source_symbol: video decoders
+source_kind: codec_registry
+evidence_source:
+- ffmpeg -codecs
+- ffmpeg -h long
+derivation_notes: Derivada de la superficie publica de codecs de video con soporte
+  de decodificacion.
+input_type: file_path
+output_type: file_path
+artifact_kind: video
+mime_family: video/*

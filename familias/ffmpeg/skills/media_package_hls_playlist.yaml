@@ -1,0 +1,25 @@
+mini_number: 132
+mini_name: 'Mini 132 #2FBF71'
+family_type: ffmpeg
+family_color_hex: '#2FBF71'
+skill_key: media_package_hls_playlist
+classification: core
+cost_class: io
+engine_action: package_hls
+input_schema: ../schemas/media_package_hls_playlist.input.json
+output_schema: ../schemas/media_package_hls_playlist.output.json
+description: Empaqueta media en playlist HLS y sus segmentos asociados.
+source_module: ffmpeg.muxers
+source_symbol: hls
+source_kind: muxer
+evidence_source:
+- ffmpeg -formats
+- ffmpeg -h muxer=hls
+derivation_notes: Derivada del muxer hls con opciones publicas de playlist, segmentacion
+  y cifrado.
+input_type: file_path
+output_type: file_path
+artifact_kind: playlist
+mime_family: application/*
+allowed_extensions:
+- m3u8

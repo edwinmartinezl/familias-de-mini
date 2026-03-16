@@ -1,0 +1,23 @@
+mini_number: 142
+mini_name: 'Mini 142 #2FBF71'
+family_type: ffmpeg
+family_color_hex: '#2FBF71'
+skill_key: stream_forward_stream
+classification: core
+cost_class: network
+engine_action: forward_stream
+input_schema: ../schemas/stream_forward_stream.input.json
+output_schema: ../schemas/stream_forward_stream.output.json
+description: Reenvia un stream hacia otro destino de red sin necesidad de transformarlo.
+source_module: ffmpeg.protocols
+source_symbol: tcp/udp/rtmp/srt outputs + codec copy
+source_kind: protocol_registry
+evidence_source:
+- ffmpeg -protocols
+- ffmpeg -h full
+derivation_notes: Derivada de los protocolos de salida instalados y del stream copy
+  para forwarding de baja carga.
+input_type: file_path
+output_type: file_path
+allowed_extensions:
+- srt

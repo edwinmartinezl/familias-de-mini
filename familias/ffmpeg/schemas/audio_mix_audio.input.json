@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "audio_mix_audio input",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "input_file": {
+      "type": "string",
+      "description": "Primary audio source path or URL."
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 2,
+      "description": "Audio sources to mix."
+    },
+    "output_file": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "input_file",
+    "inputs",
+    "output_file"
+  ]
+}

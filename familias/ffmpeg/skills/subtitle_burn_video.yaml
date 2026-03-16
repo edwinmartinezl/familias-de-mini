@@ -1,0 +1,22 @@
+mini_number: 143
+mini_name: 'Mini 143 #2FBF71'
+family_type: ffmpeg
+family_color_hex: '#2FBF71'
+skill_key: subtitle_burn_video
+classification: core
+cost_class: cpu
+engine_action: burn_subtitles
+input_schema: ../schemas/subtitle_burn_video.input.json
+output_schema: ../schemas/subtitle_burn_video.output.json
+description: Inserta subtitulos renderizados dentro del video.
+source_module: ffmpeg.filters
+source_symbol: subtitles
+source_kind: filter
+evidence_source:
+- ffmpeg -filters
+derivation_notes: Derivada del filtro subtitles que renderiza texto sobre video con
+  libass.
+input_type: file_path
+output_type: file_path
+artifact_kind: video
+mime_family: video/*

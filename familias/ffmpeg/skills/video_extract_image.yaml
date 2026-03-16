@@ -1,0 +1,23 @@
+mini_number: 151
+mini_name: 'Mini 151 #2FBF71'
+family_type: ffmpeg
+family_color_hex: '#2FBF71'
+skill_key: video_extract_image
+classification: core
+cost_class: cpu
+engine_action: extract_image
+input_schema: ../schemas/video_extract_image.input.json
+output_schema: ../schemas/video_extract_image.output.json
+description: Extrae uno o varios frames de video como imagenes.
+source_module: ffmpeg.cli
+source_symbol: -vframes + image2
+source_kind: cli_option_group
+evidence_source:
+- ffmpeg -h full
+- ffmpeg -formats
+derivation_notes: Derivada de -vframes y del formato image2 como secuencia de imagenes
+  de salida.
+input_type: file_path
+output_type: file_path
+artifact_kind: video
+mime_family: video/*

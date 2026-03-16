@@ -1,0 +1,21 @@
+mini_number: 146
+mini_name: 'Mini 146 #2FBF71'
+family_type: ffmpeg
+family_color_hex: '#2FBF71'
+skill_key: video_crop_video
+classification: core
+cost_class: cpu
+engine_action: crop_video
+input_schema: ../schemas/video_crop_video.input.json
+output_schema: ../schemas/video_crop_video.output.json
+description: Recorta el area visible de un video.
+source_module: ffmpeg.filters
+source_symbol: crop
+source_kind: filter
+evidence_source:
+- ffmpeg -filters
+derivation_notes: Derivada del filtro crop con firma V->V.
+input_type: file_path
+output_type: file_path
+artifact_kind: video
+mime_family: video/*

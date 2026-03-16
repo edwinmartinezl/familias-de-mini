@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "video_rate_video input",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "input_file": {
+      "type": "string",
+      "description": "Primary video source path or URL."
+    },
+    "output_file": {
+      "type": "string"
+    },
+    "frame_rate": {
+      "type": [
+        "number",
+        "string"
+      ]
+    }
+  },
+  "required": [
+    "frame_rate",
+    "input_file",
+    "output_file"
+  ]
+}

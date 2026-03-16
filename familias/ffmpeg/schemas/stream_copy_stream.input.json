@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "stream_copy_stream input",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "input_file": {
+      "type": "string",
+      "description": "Primary stream source path or URL."
+    },
+    "output_file": {
+      "type": "string"
+    },
+    "codec_scope": {
+      "type": "string",
+      "enum": [
+        "all",
+        "audio",
+        "video",
+        "subtitle"
+      ]
+    },
+    "format": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "input_file",
+    "output_file"
+  ]
+}

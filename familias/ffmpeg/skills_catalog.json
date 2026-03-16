@@ -1,0 +1,2167 @@
+{
+  "family_type": "ffmpeg",
+  "family_color_hex": "#2FBF71",
+  "library_base": "FFmpeg",
+  "description": "Catalogo atomico derivado del binario real de ffmpeg y de sus artefactos fisicos instalados.",
+  "analysis_mode": "real_api_derivation_atomic",
+  "analysis_sources": [
+    "binary_path:/usr/bin/ffmpeg",
+    "cli_help:ffmpeg -version",
+    "cli_help:ffmpeg -h long",
+    "cli_help:ffmpeg -h full",
+    "cli_help:ffmpeg -filters",
+    "cli_help:ffmpeg -formats",
+    "cli_help:ffmpeg -protocols",
+    "cli_help:ffmpeg -codecs",
+    "cli_help:ffmpeg -h filter=scale",
+    "cli_help:ffmpeg -h filter=amix",
+    "cli_help:ffmpeg -h demuxer=concat",
+    "cli_help:ffmpeg -h muxer=segment",
+    "cli_help:ffmpeg -h muxer=hls",
+    "cli_help:ffmpeg -h muxer=dash",
+    "cli_help:ffmpeg -h muxer=tee",
+    "package_manifest:dpkg -s ffmpeg",
+    "package_tree:dpkg -L ffmpeg",
+    "preset_file:/usr/share/ffmpeg/libvpx-360p.ffpreset",
+    "preset_file:/usr/share/ffmpeg/libvpx-720p.ffpreset",
+    "preset_file:/usr/share/ffmpeg/libvpx-1080p.ffpreset"
+  ],
+  "core_engine_actions": [
+    "decode_audio",
+    "decode_video",
+    "decode_image",
+    "encode_audio",
+    "encode_video",
+    "encode_image",
+    "convert_audio",
+    "convert_video",
+    "convert_image",
+    "copy_stream",
+    "remux_media",
+    "extract_audio",
+    "extract_image",
+    "encode_video_from_images",
+    "trim_audio",
+    "trim_video",
+    "resample_audio",
+    "mix_audio",
+    "merge_audio",
+    "adjust_audio_volume",
+    "scale_video",
+    "crop_video",
+    "change_video_framerate",
+    "overlay_video",
+    "burn_subtitles",
+    "filter_audio",
+    "filter_video",
+    "compose_filtergraph",
+    "concatenate_media",
+    "segment_media",
+    "package_hls",
+    "package_dash",
+    "duplicate_outputs",
+    "forward_stream",
+    "stream_media",
+    "map_audio",
+    "map_video",
+    "write_metadata",
+    "copy_metadata",
+    "report_progress",
+    "loop_media",
+    "accelerate_video_decode"
+  ],
+  "pattern_actions": [
+    "encode_webm_360p",
+    "encode_webm_720p",
+    "encode_webm_1080p"
+  ],
+  "skills_core": [
+    {
+      "skill_key": "audio_decode_stream",
+      "input": "audio",
+      "process": "decode",
+      "output": "stream",
+      "input_types": [
+        "audio"
+      ],
+      "output_types": [
+        "stream"
+      ],
+      "source_module": "ffmpeg.codecs",
+      "source_symbol": "audio decoders",
+      "source_kind": "codec_registry",
+      "classification": "core",
+      "description": "Decodifica audio de entrada hacia un flujo interno procesable.",
+      "evidence_source": [
+        "ffmpeg -codecs",
+        "ffmpeg -h long"
+      ],
+      "derivation_notes": "Derivada de la superficie publica de codecs de audio con soporte de decodificacion.",
+      "semantic_granularity": "domain_atomic",
+      "cost_class": "cpu",
+      "engine_action": "decode_audio",
+      "mini_number": 110,
+      "mini_name": "Mini 110 #2FBF71",
+      "input_schema_path": "schemas/audio_decode_stream.input.json",
+      "output_schema_path": "schemas/audio_decode_stream.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "audio",
+      "mime_family": "audio/*"
+    },
+    {
+      "skill_key": "video_decode_stream",
+      "input": "video",
+      "process": "decode",
+      "output": "stream",
+      "input_types": [
+        "video"
+      ],
+      "output_types": [
+        "stream"
+      ],
+      "source_module": "ffmpeg.codecs",
+      "source_symbol": "video decoders",
+      "source_kind": "codec_registry",
+      "classification": "core",
+      "description": "Decodifica video de entrada hacia un flujo interno procesable.",
+      "evidence_source": [
+        "ffmpeg -codecs",
+        "ffmpeg -h long"
+      ],
+      "derivation_notes": "Derivada de la superficie publica de codecs de video con soporte de decodificacion.",
+      "semantic_granularity": "domain_atomic",
+      "cost_class": "cpu",
+      "engine_action": "decode_video",
+      "mini_number": 147,
+      "mini_name": "Mini 147 #2FBF71",
+      "input_schema_path": "schemas/video_decode_stream.input.json",
+      "output_schema_path": "schemas/video_decode_stream.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "video",
+      "mime_family": "video/*"
+    },
+    {
+      "skill_key": "image_decode_frame",
+      "input": "image",
+      "process": "decode",
+      "output": "frame",
+      "input_types": [
+        "image"
+      ],
+      "output_types": [
+        "frame"
+      ],
+      "source_module": "ffmpeg.codecs",
+      "source_symbol": "image codecs",
+      "source_kind": "codec_registry",
+      "classification": "core",
+      "description": "Decodifica imagenes hacia frames internos para procesamiento posterior.",
+      "evidence_source": [
+        "ffmpeg -codecs",
+        "ffmpeg -formats"
+      ],
+      "derivation_notes": "Derivada de codecs y formatos de imagen instalados como bmp, apng, dpx y exr.",
+      "semantic_granularity": "domain_atomic",
+      "cost_class": "cpu",
+      "engine_action": "decode_image",
+      "mini_number": 123,
+      "mini_name": "Mini 123 #2FBF71",
+      "input_schema_path": "schemas/image_decode_frame.input.json",
+      "output_schema_path": "schemas/image_decode_frame.output.json",
+      "input_type": "file_path",
+      "output_type": "json"
+    },
+    {
+      "skill_key": "stream_encode_audio",
+      "input": "stream",
+      "process": "encode",
+      "output": "audio",
+      "input_types": [
+        "stream"
+      ],
+      "output_types": [
+        "audio"
+      ],
+      "source_module": "ffmpeg.codecs",
+      "source_symbol": "audio encoders",
+      "source_kind": "codec_registry",
+      "classification": "core",
+      "description": "Codifica un flujo interno hacia un archivo o flujo de audio.",
+      "evidence_source": [
+        "ffmpeg -codecs",
+        "ffmpeg -h full"
+      ],
+      "derivation_notes": "Derivada de la superficie publica de codecs de audio con soporte de codificacion.",
+      "semantic_granularity": "domain_atomic",
+      "cost_class": "cpu",
+      "engine_action": "encode_audio",
+      "mini_number": 140,
+      "mini_name": "Mini 140 #2FBF71",
+      "input_schema_path": "schemas/stream_encode_audio.input.json",
+      "output_schema_path": "schemas/stream_encode_audio.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "audio",
+      "mime_family": "audio/*"
+    },
+    {
+      "skill_key": "stream_encode_video",
+      "input": "stream",
+      "process": "encode",
+      "output": "video",
+      "input_types": [
+        "stream"
+      ],
+      "output_types": [
+        "video"
+      ],
+      "source_module": "ffmpeg.codecs",
+      "source_symbol": "video encoders",
+      "source_kind": "codec_registry",
+      "classification": "core",
+      "description": "Codifica un flujo interno hacia un archivo o flujo de video.",
+      "evidence_source": [
+        "ffmpeg -codecs",
+        "ffmpeg -h full"
+      ],
+      "derivation_notes": "Derivada de la superficie publica de codecs de video con soporte de codificacion.",
+      "semantic_granularity": "domain_atomic",
+      "cost_class": "cpu",
+      "engine_action": "encode_video",
+      "mini_number": 141,
+      "mini_name": "Mini 141 #2FBF71",
+      "input_schema_path": "schemas/stream_encode_video.input.json",
+      "output_schema_path": "schemas/stream_encode_video.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "video",
+      "mime_family": "video/*"
+    },
+    {
+      "skill_key": "frame_encode_image",
+      "input": "frame",
+      "process": "encode",
+      "output": "image",
+      "input_types": [
+        "frame"
+      ],
+      "output_types": [
+        "image"
+      ],
+      "source_module": "ffmpeg.codecs",
+      "source_symbol": "image encoders",
+      "source_kind": "codec_registry",
+      "classification": "core",
+      "description": "Codifica frames hacia salidas de imagen.",
+      "evidence_source": [
+        "ffmpeg -codecs",
+        "ffmpeg -formats"
+      ],
+      "derivation_notes": "Derivada de formatos y codecs de imagen con soporte de codificacion.",
+      "semantic_granularity": "domain_atomic",
+      "cost_class": "cpu",
+      "engine_action": "encode_image",
+      "mini_number": 121,
+      "mini_name": "Mini 121 #2FBF71",
+      "input_schema_path": "schemas/frame_encode_image.input.json",
+      "output_schema_path": "schemas/frame_encode_image.output.json",
+      "input_type": "json",
+      "output_type": "file_path",
+      "artifact_kind": "image",
+      "mime_family": "image/*"
+    },
+    {
+      "skill_key": "audio_convert_audio",
+      "input": "audio",
+      "process": "convert",
+      "output": "audio",
+      "input_types": [
+        "audio"
+      ],
+      "output_types": [
+        "audio"
+      ],
+      "source_module": "ffmpeg.cli",
+      "source_symbol": "-acodec",
+      "source_kind": "cli_option",
+      "classification": "core",
+      "description": "Convierte un audio a otro formato o codec de audio.",
+      "evidence_source": [
+        "ffmpeg -h full",
+        "ffmpeg -formats"
+      ],
+      "derivation_notes": "Derivada de la opcion publica -acodec y de formatos de audio como mp3 y wav.",
+      "semantic_granularity": "domain_atomic",
+      "cost_class": "cpu",
+      "engine_action": "convert_audio",
+      "mini_number": 109,
+      "mini_name": "Mini 109 #2FBF71",
+      "input_schema_path": "schemas/audio_convert_audio.input.json",
+      "output_schema_path": "schemas/audio_convert_audio.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "audio",
+      "mime_family": "audio/*"
+    },
+    {
+      "skill_key": "video_convert_video",
+      "input": "video",
+      "process": "convert",
+      "output": "video",
+      "input_types": [
+        "video"
+      ],
+      "output_types": [
+        "video"
+      ],
+      "source_module": "ffmpeg.cli",
+      "source_symbol": "-vcodec",
+      "source_kind": "cli_option",
+      "classification": "core",
+      "description": "Convierte un video a otro formato o codec de video.",
+      "evidence_source": [
+        "ffmpeg -h full",
+        "ffmpeg -formats"
+      ],
+      "derivation_notes": "Derivada de la opcion publica -vcodec y de formatos de video como mp4 y webm.",
+      "semantic_granularity": "domain_atomic",
+      "cost_class": "cpu",
+      "engine_action": "convert_video",
+      "mini_number": 145,
+      "mini_name": "Mini 145 #2FBF71",
+      "input_schema_path": "schemas/video_convert_video.input.json",
+      "output_schema_path": "schemas/video_convert_video.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "video",
+      "mime_family": "video/*"
+    },
+    {
+      "skill_key": "image_convert_image",
+      "input": "image",
+      "process": "convert",
+      "output": "image",
+      "input_types": [
+        "image"
+      ],
+      "output_types": [
+        "image"
+      ],
+      "source_module": "ffmpeg.formats",
+      "source_symbol": "image2",
+      "source_kind": "format_registry",
+      "classification": "core",
+      "description": "Convierte una imagen a otra salida de imagen.",
+      "evidence_source": [
+        "ffmpeg -formats",
+        "ffmpeg -codecs"
+      ],
+      "derivation_notes": "Derivada del formato image2 y de codecs de imagen con soporte de codificacion y decodificacion.",
+      "semantic_granularity": "domain_atomic",
+      "cost_class": "cpu",
+      "engine_action": "convert_image",
+      "mini_number": 122,
+      "mini_name": "Mini 122 #2FBF71",
+      "input_schema_path": "schemas/image_convert_image.input.json",
+      "output_schema_path": "schemas/image_convert_image.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "image",
+      "mime_family": "image/*"
+    },
+    {
+      "skill_key": "stream_copy_stream",
+      "input": "stream",
+      "process": "copy",
+      "output": "stream",
+      "input_types": [
+        "stream"
+      ],
+      "output_types": [
+        "stream"
+      ],
+      "source_module": "ffmpeg.cli",
+      "source_symbol": "-codec / -vcodec / -acodec / -scodec = copy",
+      "source_kind": "cli_option_group",
+      "classification": "core",
+      "description": "Copia streams sin recodificar, preservando el contenido codificado original.",
+      "evidence_source": [
+        "ffmpeg -h full"
+      ],
+      "derivation_notes": "Derivada de las opciones publicas de codec que aceptan el valor copy para stream copy.",
+      "semantic_granularity": "workflow_atomic",
+      "cost_class": "io",
+      "engine_action": "copy_stream",
+      "mini_number": 139,
+      "mini_name": "Mini 139 #2FBF71",
+      "input_schema_path": "schemas/stream_copy_stream.input.json",
+      "output_schema_path": "schemas/stream_copy_stream.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path"
+    },
+    {
+      "skill_key": "media_remux_media",
+      "input": "media",
+      "process": "remux",
+      "output": "media",
+      "input_types": [
+        "media"
+      ],
+      "output_types": [
+        "media"
+      ],
+      "source_module": "ffmpeg.cli",
+      "source_symbol": "-f fmt + -codec copy",
+      "source_kind": "cli_option_group",
+      "classification": "core",
+      "description": "Reempaqueta media en otro contenedor sin recodificar los streams.",
+      "evidence_source": [
+        "ffmpeg -h full",
+        "ffmpeg -formats"
+      ],
+      "derivation_notes": "Derivada de la opcion publica -f para forzar formato y de las opciones codec=copy para preservar los streams.",
+      "semantic_granularity": "workflow_atomic",
+      "cost_class": "io",
+      "engine_action": "remux_media",
+      "mini_number": 133,
+      "mini_name": "Mini 133 #2FBF71",
+      "input_schema_path": "schemas/media_remux_media.input.json",
+      "output_schema_path": "schemas/media_remux_media.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "media",
+      "mime_family": "application/*"
+    },
+    {
+      "skill_key": "stream_forward_stream",
+      "input": "stream",
+      "process": "forward",
+      "output": "stream",
+      "input_types": [
+        "stream"
+      ],
+      "output_types": [
+        "stream"
+      ],
+      "source_module": "ffmpeg.protocols",
+      "source_symbol": "tcp/udp/rtmp/srt outputs + codec copy",
+      "source_kind": "protocol_registry",
+      "classification": "core",
+      "description": "Reenvia un stream hacia otro destino de red sin necesidad de transformarlo.",
+      "evidence_source": [
+        "ffmpeg -protocols",
+        "ffmpeg -h full"
+      ],
+      "derivation_notes": "Derivada de los protocolos de salida instalados y del stream copy para forwarding de baja carga.",
+      "semantic_granularity": "workflow_atomic",
+      "cost_class": "network",
+      "engine_action": "forward_stream",
+      "mini_number": 142,
+      "mini_name": "Mini 142 #2FBF71",
+      "input_schema_path": "schemas/stream_forward_stream.input.json",
+      "output_schema_path": "schemas/stream_forward_stream.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "allowed_extensions": [
+        "srt"
+      ]
+    },
+    {
+      "skill_key": "video_extract_audio",
+      "input": "video",
+      "process": "extract",
+      "output": "audio",
+      "input_types": [
+        "video"
+      ],
+      "output_types": [
+        "audio"
+      ],
+      "source_module": "ffmpeg.cli",
+      "source_symbol": "-vn",
+      "source_kind": "cli_option",
+      "classification": "core",
+      "description": "Extrae audio desde una fuente de video.",
+      "evidence_source": [
+        "ffmpeg -h full",
+        "ffmpeg -formats"
+      ],
+      "derivation_notes": "Derivada de la opcion -vn para desactivar video y de la salida de formatos de audio.",
+      "semantic_granularity": "workflow_atomic",
+      "cost_class": "cpu",
+      "engine_action": "extract_audio",
+      "mini_number": 150,
+      "mini_name": "Mini 150 #2FBF71",
+      "input_schema_path": "schemas/video_extract_audio.input.json",
+      "output_schema_path": "schemas/video_extract_audio.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "audio",
+      "mime_family": "audio/*"
+    },
+    {
+      "skill_key": "video_extract_image",
+      "input": "video",
+      "process": "extract",
+      "output": "image",
+      "input_types": [
+        "video"
+      ],
+      "output_types": [
+        "image"
+      ],
+      "source_module": "ffmpeg.cli",
+      "source_symbol": "-vframes + image2",
+      "source_kind": "cli_option_group",
+      "classification": "core",
+      "description": "Extrae uno o varios frames de video como imagenes.",
+      "evidence_source": [
+        "ffmpeg -h full",
+        "ffmpeg -formats"
+      ],
+      "derivation_notes": "Derivada de -vframes y del formato image2 como secuencia de imagenes de salida.",
+      "semantic_granularity": "workflow_atomic",
+      "cost_class": "cpu",
+      "engine_action": "extract_image",
+      "mini_number": 151,
+      "mini_name": "Mini 151 #2FBF71",
+      "input_schema_path": "schemas/video_extract_image.input.json",
+      "output_schema_path": "schemas/video_extract_image.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "video",
+      "mime_family": "video/*"
+    },
+    {
+      "skill_key": "image_sequence_encode_video",
+      "input": "image_sequence",
+      "process": "encode",
+      "output": "video",
+      "input_types": [
+        "image_sequence"
+      ],
+      "output_types": [
+        "video"
+      ],
+      "source_module": "ffmpeg.formats",
+      "source_symbol": "image2",
+      "source_kind": "format_registry",
+      "classification": "core",
+      "description": "Codifica una secuencia de imagenes como video.",
+      "evidence_source": [
+        "ffmpeg -formats",
+        "ffmpeg -codecs"
+      ],
+      "derivation_notes": "Derivada del formato image2 como entrada y de los encoders de video disponibles.",
+      "semantic_granularity": "workflow_atomic",
+      "cost_class": "cpu",
+      "engine_action": "encode_video_from_images",
+      "mini_number": 127,
+      "mini_name": "Mini 127 #2FBF71",
+      "input_schema_path": "schemas/image_sequence_encode_video.input.json",
+      "output_schema_path": "schemas/image_sequence_encode_video.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "video",
+      "mime_family": "video/*"
+    },
+    {
+      "skill_key": "audio_encode_mp3",
+      "input": "audio",
+      "process": "encode",
+      "output": "mp3",
+      "input_types": [
+        "audio"
+      ],
+      "output_types": [
+        "mp3"
+      ],
+      "source_module": "ffmpeg.formats",
+      "source_symbol": "mp3",
+      "source_kind": "format_registry",
+      "classification": "core",
+      "description": "Genera una salida MP3 desde audio de entrada.",
+      "evidence_source": [
+        "ffmpeg -formats",
+        "ffmpeg -h full"
+      ],
+      "derivation_notes": "Derivada del formato MP3 con soporte de muxing y de las opciones publicas de codec de audio.",
+      "semantic_granularity": "format_specific",
+      "cost_class": "cpu",
+      "engine_action": "encode_audio",
+      "mini_number": 111,
+      "mini_name": "Mini 111 #2FBF71",
+      "input_schema_path": "schemas/audio_encode_mp3.input.json",
+      "output_schema_path": "schemas/audio_encode_mp3.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "audio",
+      "mime_family": "audio/*",
+      "allowed_extensions": [
+        "mp3"
+      ]
+    },
+    {
+      "skill_key": "audio_encode_wav",
+      "input": "audio",
+      "process": "encode",
+      "output": "wav",
+      "input_types": [
+        "audio"
+      ],
+      "output_types": [
+        "wav"
+      ],
+      "source_module": "ffmpeg.formats",
+      "source_symbol": "wav",
+      "source_kind": "format_registry",
+      "classification": "core",
+      "description": "Genera una salida WAV desde audio de entrada.",
+      "evidence_source": [
+        "ffmpeg -formats",
+        "ffmpeg -h full"
+      ],
+      "derivation_notes": "Derivada del formato WAV con soporte de muxing y de las opciones publicas de codec de audio.",
+      "semantic_granularity": "format_specific",
+      "cost_class": "cpu",
+      "engine_action": "encode_audio",
+      "mini_number": 112,
+      "mini_name": "Mini 112 #2FBF71",
+      "input_schema_path": "schemas/audio_encode_wav.input.json",
+      "output_schema_path": "schemas/audio_encode_wav.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "audio",
+      "mime_family": "audio/*",
+      "allowed_extensions": [
+        "wav"
+      ]
+    },
+    {
+      "skill_key": "video_encode_mp4",
+      "input": "video",
+      "process": "encode",
+      "output": "mp4",
+      "input_types": [
+        "video"
+      ],
+      "output_types": [
+        "mp4"
+      ],
+      "source_module": "ffmpeg.formats",
+      "source_symbol": "mp4",
+      "source_kind": "format_registry",
+      "classification": "core",
+      "description": "Genera una salida MP4 desde video de entrada.",
+      "evidence_source": [
+        "ffmpeg -formats",
+        "ffmpeg -h full"
+      ],
+      "derivation_notes": "Derivada del formato MP4 con soporte de muxing y de las opciones publicas de video codec.",
+      "semantic_granularity": "format_specific",
+      "cost_class": "cpu",
+      "engine_action": "encode_video",
+      "mini_number": 148,
+      "mini_name": "Mini 148 #2FBF71",
+      "input_schema_path": "schemas/video_encode_mp4.input.json",
+      "output_schema_path": "schemas/video_encode_mp4.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "video",
+      "mime_family": "video/*",
+      "allowed_extensions": [
+        "mp4"
+      ]
+    },
+    {
+      "skill_key": "video_encode_webm",
+      "input": "video",
+      "process": "encode",
+      "output": "webm",
+      "input_types": [
+        "video"
+      ],
+      "output_types": [
+        "webm"
+      ],
+      "source_module": "ffmpeg.formats",
+      "source_symbol": "webm",
+      "source_kind": "format_registry",
+      "classification": "core",
+      "description": "Genera una salida WebM desde video de entrada.",
+      "evidence_source": [
+        "ffmpeg -formats",
+        "ffmpeg -h full"
+      ],
+      "derivation_notes": "Derivada del formato WebM con soporte de muxing y de las opciones publicas de video codec.",
+      "semantic_granularity": "format_specific",
+      "cost_class": "cpu",
+      "engine_action": "encode_video",
+      "mini_number": 149,
+      "mini_name": "Mini 149 #2FBF71",
+      "input_schema_path": "schemas/video_encode_webm.input.json",
+      "output_schema_path": "schemas/video_encode_webm.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "video",
+      "mime_family": "video/*",
+      "allowed_extensions": [
+        "webm"
+      ]
+    },
+    {
+      "skill_key": "image_encode_gif",
+      "input": "image",
+      "process": "encode",
+      "output": "gif",
+      "input_types": [
+        "image"
+      ],
+      "output_types": [
+        "gif"
+      ],
+      "source_module": "ffmpeg.formats",
+      "source_symbol": "gif",
+      "source_kind": "format_registry",
+      "classification": "core",
+      "description": "Genera una salida GIF desde imagen o frame de entrada.",
+      "evidence_source": [
+        "ffmpeg -formats",
+        "ffmpeg -codecs"
+      ],
+      "derivation_notes": "Derivada del formato GIF con soporte de demuxing y muxing.",
+      "semantic_granularity": "format_specific",
+      "cost_class": "cpu",
+      "engine_action": "encode_image",
+      "mini_number": 125,
+      "mini_name": "Mini 125 #2FBF71",
+      "input_schema_path": "schemas/image_encode_gif.input.json",
+      "output_schema_path": "schemas/image_encode_gif.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "image",
+      "mime_family": "image/*",
+      "allowed_extensions": [
+        "gif"
+      ]
+    },
+    {
+      "skill_key": "image_encode_apng",
+      "input": "image",
+      "process": "encode",
+      "output": "apng",
+      "input_types": [
+        "image"
+      ],
+      "output_types": [
+        "apng"
+      ],
+      "source_module": "ffmpeg.formats",
+      "source_symbol": "apng",
+      "source_kind": "format_registry",
+      "classification": "core",
+      "description": "Genera una salida APNG desde imagenes o frames de entrada.",
+      "evidence_source": [
+        "ffmpeg -formats",
+        "ffmpeg -codecs"
+      ],
+      "derivation_notes": "Derivada del formato APNG con soporte de demuxing y muxing.",
+      "semantic_granularity": "format_specific",
+      "cost_class": "cpu",
+      "engine_action": "encode_image",
+      "mini_number": 124,
+      "mini_name": "Mini 124 #2FBF71",
+      "input_schema_path": "schemas/image_encode_apng.input.json",
+      "output_schema_path": "schemas/image_encode_apng.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "image",
+      "mime_family": "image/*",
+      "allowed_extensions": [
+        "apng"
+      ]
+    },
+    {
+      "skill_key": "audio_trim_audio",
+      "input": "audio",
+      "process": "trim",
+      "output": "audio",
+      "input_types": [
+        "audio"
+      ],
+      "output_types": [
+        "audio"
+      ],
+      "source_module": "ffmpeg.filters",
+      "source_symbol": "atrim",
+      "source_kind": "filter",
+      "classification": "core",
+      "description": "Recorta un segmento continuo de audio.",
+      "evidence_source": [
+        "ffmpeg -filters"
+      ],
+      "derivation_notes": "Derivada del filtro atrim con firma A->A.",
+      "semantic_granularity": "domain_atomic",
+      "cost_class": "cpu",
+      "engine_action": "trim_audio",
+      "mini_number": 118,
+      "mini_name": "Mini 118 #2FBF71",
+      "input_schema_path": "schemas/audio_trim_audio.input.json",
+      "output_schema_path": "schemas/audio_trim_audio.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "audio",
+      "mime_family": "audio/*"
+    },
+    {
+      "skill_key": "video_trim_video",
+      "input": "video",
+      "process": "trim",
+      "output": "video",
+      "input_types": [
+        "video"
+      ],
+      "output_types": [
+        "video"
+      ],
+      "source_module": "ffmpeg.filters",
+      "source_symbol": "trim",
+      "source_kind": "filter",
+      "classification": "core",
+      "description": "Recorta un segmento continuo de video.",
+      "evidence_source": [
+        "ffmpeg -filters"
+      ],
+      "derivation_notes": "Derivada del filtro trim con firma V->V.",
+      "semantic_granularity": "domain_atomic",
+      "cost_class": "cpu",
+      "engine_action": "trim_video",
+      "mini_number": 157,
+      "mini_name": "Mini 157 #2FBF71",
+      "input_schema_path": "schemas/video_trim_video.input.json",
+      "output_schema_path": "schemas/video_trim_video.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "video",
+      "mime_family": "video/*"
+    },
+    {
+      "skill_key": "audio_resample_audio",
+      "input": "audio",
+      "process": "resample",
+      "output": "audio",
+      "input_types": [
+        "audio"
+      ],
+      "output_types": [
+        "audio"
+      ],
+      "source_module": "ffmpeg.filters",
+      "source_symbol": "aresample",
+      "source_kind": "filter",
+      "classification": "core",
+      "description": "Re-muestrea audio a otra frecuencia o configuracion compatible.",
+      "evidence_source": [
+        "ffmpeg -filters"
+      ],
+      "derivation_notes": "Derivada del filtro aresample con firma A->A.",
+      "semantic_granularity": "domain_atomic",
+      "cost_class": "cpu",
+      "engine_action": "resample_audio",
+      "mini_number": 117,
+      "mini_name": "Mini 117 #2FBF71",
+      "input_schema_path": "schemas/audio_resample_audio.input.json",
+      "output_schema_path": "schemas/audio_resample_audio.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "audio",
+      "mime_family": "audio/*"
+    },
+    {
+      "skill_key": "audio_mix_audio",
+      "input": "audio",
+      "process": "mix",
+      "output": "audio",
+      "input_types": [
+        "audio"
+      ],
+      "output_types": [
+        "audio"
+      ],
+      "source_module": "ffmpeg.filters",
+      "source_symbol": "amix",
+      "source_kind": "filter",
+      "classification": "core",
+      "description": "Mezcla varias entradas de audio en una sola salida.",
+      "evidence_source": [
+        "ffmpeg -h filter=amix",
+        "ffmpeg -filters"
+      ],
+      "derivation_notes": "Derivada del filtro amix con entradas dinamicas y salida unica de audio.",
+      "semantic_granularity": "domain_atomic",
+      "cost_class": "cpu",
+      "engine_action": "mix_audio",
+      "mini_number": 116,
+      "mini_name": "Mini 116 #2FBF71",
+      "input_schema_path": "schemas/audio_mix_audio.input.json",
+      "output_schema_path": "schemas/audio_mix_audio.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "audio",
+      "mime_family": "audio/*"
+    },
+    {
+      "skill_key": "audio_merge_audio",
+      "input": "audio",
+      "process": "merge",
+      "output": "audio",
+      "input_types": [
+        "audio"
+      ],
+      "output_types": [
+        "audio"
+      ],
+      "source_module": "ffmpeg.filters",
+      "source_symbol": "amerge",
+      "source_kind": "filter",
+      "classification": "core",
+      "description": "Fusiona multiples entradas de audio en una salida multicanal.",
+      "evidence_source": [
+        "ffmpeg -filters"
+      ],
+      "derivation_notes": "Derivada del filtro amerge con firma N->A.",
+      "semantic_granularity": "domain_atomic",
+      "cost_class": "cpu",
+      "engine_action": "merge_audio",
+      "mini_number": 115,
+      "mini_name": "Mini 115 #2FBF71",
+      "input_schema_path": "schemas/audio_merge_audio.input.json",
+      "output_schema_path": "schemas/audio_merge_audio.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "audio",
+      "mime_family": "audio/*"
+    },
+    {
+      "skill_key": "audio_volume_audio",
+      "input": "audio",
+      "process": "adjust_volume",
+      "output": "audio",
+      "input_types": [
+        "audio"
+      ],
+      "output_types": [
+        "audio"
+      ],
+      "source_module": "ffmpeg.filters",
+      "source_symbol": "volume",
+      "source_kind": "filter",
+      "classification": "core",
+      "description": "Ajusta el volumen del audio de entrada.",
+      "evidence_source": [
+        "ffmpeg -filters"
+      ],
+      "derivation_notes": "Derivada del filtro volume con firma A->A.",
+      "semantic_granularity": "domain_atomic",
+      "cost_class": "cpu",
+      "engine_action": "adjust_audio_volume",
+      "mini_number": 119,
+      "mini_name": "Mini 119 #2FBF71",
+      "input_schema_path": "schemas/audio_volume_audio.input.json",
+      "output_schema_path": "schemas/audio_volume_audio.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "audio",
+      "mime_family": "audio/*"
+    },
+    {
+      "skill_key": "video_scale_video",
+      "input": "video",
+      "process": "scale",
+      "output": "video",
+      "input_types": [
+        "video"
+      ],
+      "output_types": [
+        "video"
+      ],
+      "source_module": "ffmpeg.filters",
+      "source_symbol": "scale",
+      "source_kind": "filter",
+      "classification": "core",
+      "description": "Escala video a otro tamano o resolucion.",
+      "evidence_source": [
+        "ffmpeg -h filter=scale",
+        "ffmpeg -filters"
+      ],
+      "derivation_notes": "Derivada del filtro scale con opciones publicas de width y height.",
+      "semantic_granularity": "domain_atomic",
+      "cost_class": "cpu",
+      "engine_action": "scale_video",
+      "mini_number": 156,
+      "mini_name": "Mini 156 #2FBF71",
+      "input_schema_path": "schemas/video_scale_video.input.json",
+      "output_schema_path": "schemas/video_scale_video.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "video",
+      "mime_family": "video/*"
+    },
+    {
+      "skill_key": "video_crop_video",
+      "input": "video",
+      "process": "crop",
+      "output": "video",
+      "input_types": [
+        "video"
+      ],
+      "output_types": [
+        "video"
+      ],
+      "source_module": "ffmpeg.filters",
+      "source_symbol": "crop",
+      "source_kind": "filter",
+      "classification": "core",
+      "description": "Recorta el area visible de un video.",
+      "evidence_source": [
+        "ffmpeg -filters"
+      ],
+      "derivation_notes": "Derivada del filtro crop con firma V->V.",
+      "semantic_granularity": "domain_atomic",
+      "cost_class": "cpu",
+      "engine_action": "crop_video",
+      "mini_number": 146,
+      "mini_name": "Mini 146 #2FBF71",
+      "input_schema_path": "schemas/video_crop_video.input.json",
+      "output_schema_path": "schemas/video_crop_video.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "video",
+      "mime_family": "video/*"
+    },
+    {
+      "skill_key": "video_rate_video",
+      "input": "video",
+      "process": "change_rate",
+      "output": "video",
+      "input_types": [
+        "video"
+      ],
+      "output_types": [
+        "video"
+      ],
+      "source_module": "ffmpeg.filters",
+      "source_symbol": "fps",
+      "source_kind": "filter",
+      "classification": "core",
+      "description": "Cambia la tasa de frames de un video.",
+      "evidence_source": [
+        "ffmpeg -filters",
+        "ffmpeg -h full"
+      ],
+      "derivation_notes": "Derivada del filtro fps y de la opcion publica -r.",
+      "semantic_granularity": "domain_atomic",
+      "cost_class": "cpu",
+      "engine_action": "change_video_framerate",
+      "mini_number": 155,
+      "mini_name": "Mini 155 #2FBF71",
+      "input_schema_path": "schemas/video_rate_video.input.json",
+      "output_schema_path": "schemas/video_rate_video.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "video",
+      "mime_family": "video/*"
+    },
+    {
+      "skill_key": "video_overlay_video",
+      "input": "video",
+      "process": "overlay",
+      "output": "video",
+      "input_types": [
+        "video"
+      ],
+      "output_types": [
+        "video"
+      ],
+      "source_module": "ffmpeg.filters",
+      "source_symbol": "overlay",
+      "source_kind": "filter",
+      "classification": "core",
+      "description": "Superpone una fuente de video sobre otra.",
+      "evidence_source": [
+        "ffmpeg -filters"
+      ],
+      "derivation_notes": "Derivada del filtro overlay con firma VV->V.",
+      "semantic_granularity": "domain_atomic",
+      "cost_class": "cpu",
+      "engine_action": "overlay_video",
+      "mini_number": 154,
+      "mini_name": "Mini 154 #2FBF71",
+      "input_schema_path": "schemas/video_overlay_video.input.json",
+      "output_schema_path": "schemas/video_overlay_video.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "video",
+      "mime_family": "video/*"
+    },
+    {
+      "skill_key": "subtitle_burn_video",
+      "input": "subtitle",
+      "process": "burn",
+      "output": "video",
+      "input_types": [
+        "subtitle",
+        "video"
+      ],
+      "output_types": [
+        "video"
+      ],
+      "source_module": "ffmpeg.filters",
+      "source_symbol": "subtitles",
+      "source_kind": "filter",
+      "classification": "core",
+      "description": "Inserta subtitulos renderizados dentro del video.",
+      "evidence_source": [
+        "ffmpeg -filters"
+      ],
+      "derivation_notes": "Derivada del filtro subtitles que renderiza texto sobre video con libass.",
+      "semantic_granularity": "workflow_atomic",
+      "cost_class": "cpu",
+      "engine_action": "burn_subtitles",
+      "mini_number": 143,
+      "mini_name": "Mini 143 #2FBF71",
+      "input_schema_path": "schemas/subtitle_burn_video.input.json",
+      "output_schema_path": "schemas/subtitle_burn_video.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "video",
+      "mime_family": "video/*"
+    },
+    {
+      "skill_key": "audio_filter_audio",
+      "input": "audio",
+      "process": "filter",
+      "output": "audio",
+      "input_types": [
+        "audio"
+      ],
+      "output_types": [
+        "audio"
+      ],
+      "source_module": "ffmpeg.cli",
+      "source_symbol": "-af",
+      "source_kind": "cli_option",
+      "classification": "core",
+      "description": "Aplica un grafo de filtros de audio a una entrada de audio.",
+      "evidence_source": [
+        "ffmpeg -h full",
+        "ffmpeg -filters"
+      ],
+      "derivation_notes": "Derivada de la opcion publica -af y del registro de filtros de audio instalado.",
+      "semantic_granularity": "domain_atomic",
+      "cost_class": "cpu",
+      "engine_action": "filter_audio",
+      "mini_number": 113,
+      "mini_name": "Mini 113 #2FBF71",
+      "input_schema_path": "schemas/audio_filter_audio.input.json",
+      "output_schema_path": "schemas/audio_filter_audio.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "audio",
+      "mime_family": "audio/*"
+    },
+    {
+      "skill_key": "video_filter_video",
+      "input": "video",
+      "process": "filter",
+      "output": "video",
+      "input_types": [
+        "video"
+      ],
+      "output_types": [
+        "video"
+      ],
+      "source_module": "ffmpeg.cli",
+      "source_symbol": "-vf",
+      "source_kind": "cli_option",
+      "classification": "core",
+      "description": "Aplica un grafo de filtros de video a una entrada de video.",
+      "evidence_source": [
+        "ffmpeg -h full",
+        "ffmpeg -filters"
+      ],
+      "derivation_notes": "Derivada de la opcion publica -vf y del registro de filtros de video instalado.",
+      "semantic_granularity": "domain_atomic",
+      "cost_class": "cpu",
+      "engine_action": "filter_video",
+      "mini_number": 152,
+      "mini_name": "Mini 152 #2FBF71",
+      "input_schema_path": "schemas/video_filter_video.input.json",
+      "output_schema_path": "schemas/video_filter_video.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "video",
+      "mime_family": "video/*"
+    },
+    {
+      "skill_key": "media_compose_filtergraph_media",
+      "input": "filter_graph",
+      "process": "compose",
+      "output": "media",
+      "input_types": [
+        "filter_graph",
+        "media"
+      ],
+      "output_types": [
+        "media"
+      ],
+      "source_module": "ffmpeg.cli",
+      "source_symbol": "-filter_complex",
+      "source_kind": "cli_option",
+      "classification": "core",
+      "description": "Compone un filtergraph complejo sobre multiples flujos de media.",
+      "evidence_source": [
+        "ffmpeg -h full"
+      ],
+      "derivation_notes": "Derivada de las opciones publicas -filter_complex y -lavfi.",
+      "semantic_granularity": "workflow_atomic",
+      "cost_class": "cpu",
+      "engine_action": "compose_filtergraph",
+      "mini_number": 128,
+      "mini_name": "Mini 128 #2FBF71",
+      "input_schema_path": "schemas/media_compose_filtergraph_media.input.json",
+      "output_schema_path": "schemas/media_compose_filtergraph_media.output.json",
+      "input_type": "json",
+      "output_type": "file_path",
+      "artifact_kind": "media",
+      "mime_family": "application/*"
+    },
+    {
+      "skill_key": "concat_script_concatenate_media",
+      "input": "concat_script",
+      "process": "concatenate",
+      "output": "media",
+      "input_types": [
+        "concat_script"
+      ],
+      "output_types": [
+        "media"
+      ],
+      "source_module": "ffmpeg.demuxers",
+      "source_symbol": "concat",
+      "source_kind": "demuxer",
+      "classification": "core",
+      "description": "Concatena entradas segun un script ffconcat.",
+      "evidence_source": [
+        "ffmpeg -formats",
+        "ffmpeg -h demuxer=concat"
+      ],
+      "derivation_notes": "Derivada del demuxer concat y sus opciones publicas de seguridad y conversion automatica.",
+      "semantic_granularity": "workflow_atomic",
+      "cost_class": "io",
+      "engine_action": "concatenate_media",
+      "mini_number": 120,
+      "mini_name": "Mini 120 #2FBF71",
+      "input_schema_path": "schemas/concat_script_concatenate_media.input.json",
+      "output_schema_path": "schemas/concat_script_concatenate_media.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "media",
+      "mime_family": "application/*"
+    },
+    {
+      "skill_key": "media_package_hls_playlist",
+      "input": "media",
+      "process": "package_hls",
+      "output": "playlist",
+      "input_types": [
+        "media"
+      ],
+      "output_types": [
+        "playlist",
+        "segment_set"
+      ],
+      "source_module": "ffmpeg.muxers",
+      "source_symbol": "hls",
+      "source_kind": "muxer",
+      "classification": "core",
+      "description": "Empaqueta media en playlist HLS y sus segmentos asociados.",
+      "evidence_source": [
+        "ffmpeg -formats",
+        "ffmpeg -h muxer=hls"
+      ],
+      "derivation_notes": "Derivada del muxer hls con opciones publicas de playlist, segmentacion y cifrado.",
+      "semantic_granularity": "workflow_atomic",
+      "cost_class": "io",
+      "engine_action": "package_hls",
+      "mini_number": 132,
+      "mini_name": "Mini 132 #2FBF71",
+      "input_schema_path": "schemas/media_package_hls_playlist.input.json",
+      "output_schema_path": "schemas/media_package_hls_playlist.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "playlist",
+      "mime_family": "application/*",
+      "allowed_extensions": [
+        "m3u8"
+      ]
+    },
+    {
+      "skill_key": "media_package_dash_playlist",
+      "input": "media",
+      "process": "package_dash",
+      "output": "playlist",
+      "input_types": [
+        "media"
+      ],
+      "output_types": [
+        "playlist",
+        "segment_set"
+      ],
+      "source_module": "ffmpeg.muxers",
+      "source_symbol": "dash",
+      "source_kind": "muxer",
+      "classification": "core",
+      "description": "Empaqueta media en manifiestos y segmentos MPEG-DASH.",
+      "evidence_source": [
+        "ffmpeg -formats",
+        "ffmpeg -h muxer=dash"
+      ],
+      "derivation_notes": "Derivada del muxer dash con opciones publicas de segmentacion, manifest y baja latencia.",
+      "semantic_granularity": "workflow_atomic",
+      "cost_class": "io",
+      "engine_action": "package_dash",
+      "mini_number": 131,
+      "mini_name": "Mini 131 #2FBF71",
+      "input_schema_path": "schemas/media_package_dash_playlist.input.json",
+      "output_schema_path": "schemas/media_package_dash_playlist.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "playlist",
+      "mime_family": "application/*",
+      "allowed_extensions": [
+        "mpd"
+      ]
+    },
+    {
+      "skill_key": "audio_map_output",
+      "input": "audio",
+      "process": "map",
+      "output": "output",
+      "input_types": [
+        "audio"
+      ],
+      "output_types": [
+        "output"
+      ],
+      "source_module": "ffmpeg.cli",
+      "source_symbol": "-map",
+      "source_kind": "cli_option",
+      "classification": "core",
+      "description": "Selecciona y enruta streams de audio especificos hacia la salida.",
+      "evidence_source": [
+        "ffmpeg -h full"
+      ],
+      "derivation_notes": "Derivada de la opcion publica -map con stream specifiers para tipos de stream.",
+      "semantic_granularity": "domain_atomic",
+      "cost_class": "cpu",
+      "engine_action": "map_audio",
+      "mini_number": 114,
+      "mini_name": "Mini 114 #2FBF71",
+      "input_schema_path": "schemas/audio_map_output.input.json",
+      "output_schema_path": "schemas/audio_map_output.output.json",
+      "input_type": "file_path",
+      "output_type": "json"
+    },
+    {
+      "skill_key": "video_map_output",
+      "input": "video",
+      "process": "map",
+      "output": "output",
+      "input_types": [
+        "video"
+      ],
+      "output_types": [
+        "output"
+      ],
+      "source_module": "ffmpeg.cli",
+      "source_symbol": "-map",
+      "source_kind": "cli_option",
+      "classification": "core",
+      "description": "Selecciona y enruta streams de video especificos hacia la salida.",
+      "evidence_source": [
+        "ffmpeg -h full"
+      ],
+      "derivation_notes": "Derivada de la opcion publica -map con stream specifiers para tipos de stream.",
+      "semantic_granularity": "domain_atomic",
+      "cost_class": "cpu",
+      "engine_action": "map_video",
+      "mini_number": 153,
+      "mini_name": "Mini 153 #2FBF71",
+      "input_schema_path": "schemas/video_map_output.input.json",
+      "output_schema_path": "schemas/video_map_output.output.json",
+      "input_type": "file_path",
+      "output_type": "json"
+    },
+    {
+      "skill_key": "metadata_write_media",
+      "input": "metadata",
+      "process": "write",
+      "output": "media",
+      "input_types": [
+        "metadata"
+      ],
+      "output_types": [
+        "media"
+      ],
+      "source_module": "ffmpeg.cli",
+      "source_symbol": "-metadata",
+      "source_kind": "cli_option",
+      "classification": "core",
+      "description": "Escribe o sobrescribe metadata en una salida multimedia.",
+      "evidence_source": [
+        "ffmpeg -h full"
+      ],
+      "derivation_notes": "Derivada de la opcion publica -metadata string=string.",
+      "semantic_granularity": "control_atomic",
+      "cost_class": "io",
+      "engine_action": "write_metadata",
+      "mini_number": 137,
+      "mini_name": "Mini 137 #2FBF71",
+      "input_schema_path": "schemas/metadata_write_media.input.json",
+      "output_schema_path": "schemas/metadata_write_media.output.json",
+      "input_type": "json",
+      "output_type": "file_path",
+      "artifact_kind": "media",
+      "mime_family": "application/*"
+    },
+    {
+      "skill_key": "metadata_copy_media",
+      "input": "metadata",
+      "process": "copy",
+      "output": "media",
+      "input_types": [
+        "metadata",
+        "media"
+      ],
+      "output_types": [
+        "media"
+      ],
+      "source_module": "ffmpeg.cli",
+      "source_symbol": "-map_metadata",
+      "source_kind": "cli_option",
+      "classification": "core",
+      "description": "Copia metadata desde una entrada hacia una salida multimedia.",
+      "evidence_source": [
+        "ffmpeg -h full"
+      ],
+      "derivation_notes": "Derivada de la opcion publica -map_metadata para mapeo de metadata entre archivos.",
+      "semantic_granularity": "control_atomic",
+      "cost_class": "io",
+      "engine_action": "copy_metadata",
+      "mini_number": 136,
+      "mini_name": "Mini 136 #2FBF71",
+      "input_schema_path": "schemas/metadata_copy_media.input.json",
+      "output_schema_path": "schemas/metadata_copy_media.output.json",
+      "input_type": "json",
+      "output_type": "file_path",
+      "artifact_kind": "media",
+      "mime_family": "application/*"
+    },
+    {
+      "skill_key": "progress_report_status",
+      "input": "progress_url",
+      "process": "report",
+      "output": "status",
+      "input_types": [
+        "progress_url"
+      ],
+      "output_types": [
+        "status"
+      ],
+      "source_module": "ffmpeg.cli",
+      "source_symbol": "-progress",
+      "source_kind": "cli_option",
+      "classification": "core",
+      "description": "Emite progreso legible por maquina durante la ejecucion.",
+      "evidence_source": [
+        "ffmpeg -h long"
+      ],
+      "derivation_notes": "Derivada de la opcion publica -progress url.",
+      "semantic_granularity": "control_atomic",
+      "cost_class": "cpu",
+      "engine_action": "report_progress",
+      "mini_number": 138,
+      "mini_name": "Mini 138 #2FBF71",
+      "input_schema_path": "schemas/progress_report_status.input.json",
+      "output_schema_path": "schemas/progress_report_status.output.json",
+      "input_type": "string",
+      "output_type": "json"
+    },
+    {
+      "skill_key": "media_loop_media",
+      "input": "media",
+      "process": "loop",
+      "output": "media",
+      "input_types": [
+        "media"
+      ],
+      "output_types": [
+        "media"
+      ],
+      "source_module": "ffmpeg.cli",
+      "source_symbol": "-stream_loop",
+      "source_kind": "cli_option",
+      "classification": "core",
+      "description": "Repite una entrada multimedia antes de procesarla.",
+      "evidence_source": [
+        "ffmpeg -h full"
+      ],
+      "derivation_notes": "Derivada de la opcion publica -stream_loop.",
+      "semantic_granularity": "workflow_atomic",
+      "cost_class": "cpu",
+      "engine_action": "loop_media",
+      "mini_number": 130,
+      "mini_name": "Mini 130 #2FBF71",
+      "input_schema_path": "schemas/media_loop_media.input.json",
+      "output_schema_path": "schemas/media_loop_media.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "media",
+      "mime_family": "application/*"
+    },
+    {
+      "skill_key": "video_accelerate_decode_stream",
+      "input": "video",
+      "process": "accelerate_decode",
+      "output": "stream",
+      "input_types": [
+        "video"
+      ],
+      "output_types": [
+        "stream"
+      ],
+      "source_module": "ffmpeg.cli",
+      "source_symbol": "-hwaccel",
+      "source_kind": "cli_option",
+      "classification": "core",
+      "description": "Usa aceleracion de hardware para rutas soportadas de decodificacion de video.",
+      "evidence_source": [
+        "ffmpeg -h full"
+      ],
+      "derivation_notes": "Derivada de la opcion publica -hwaccel.",
+      "semantic_granularity": "control_atomic",
+      "cost_class": "gpu",
+      "engine_action": "accelerate_video_decode",
+      "mini_number": 144,
+      "mini_name": "Mini 144 #2FBF71",
+      "input_schema_path": "schemas/video_accelerate_decode_stream.input.json",
+      "output_schema_path": "schemas/video_accelerate_decode_stream.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "video",
+      "mime_family": "video/*"
+    }
+  ],
+  "skills_patterns": [
+    {
+      "skill_key": "video_encode_webm_360p",
+      "input": "video",
+      "process": "encode_webm_360p",
+      "output": "webm",
+      "input_types": [
+        "video"
+      ],
+      "output_types": [
+        "webm"
+      ],
+      "source_module": "ffmpeg.presets",
+      "source_symbol": "libvpx-360p.ffpreset",
+      "source_kind": "preset_file",
+      "classification": "pattern",
+      "description": "Aplica el preset fisico de FFmpeg para codificacion WebM 360p.",
+      "evidence_source": [
+        "dpkg -L ffmpeg",
+        "/usr/share/ffmpeg/libvpx-360p.ffpreset"
+      ],
+      "derivation_notes": "Derivada de un preset fisico empaquetado con el sistema.",
+      "semantic_granularity": "pattern_preset",
+      "cost_class": "cpu",
+      "engine_action": "encode_webm_360p",
+      "mini_number": 159,
+      "mini_name": "Mini 159 #2FBF71",
+      "input_schema_path": "schemas/video_encode_webm_360p.input.json",
+      "output_schema_path": "schemas/video_encode_webm_360p.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "video",
+      "mime_family": "video/*",
+      "allowed_extensions": [
+        "webm"
+      ]
+    },
+    {
+      "skill_key": "video_encode_webm_720p",
+      "input": "video",
+      "process": "encode_webm_720p",
+      "output": "webm",
+      "input_types": [
+        "video"
+      ],
+      "output_types": [
+        "webm"
+      ],
+      "source_module": "ffmpeg.presets",
+      "source_symbol": "libvpx-720p.ffpreset",
+      "source_kind": "preset_file",
+      "classification": "pattern",
+      "description": "Aplica el preset fisico de FFmpeg para codificacion WebM 720p.",
+      "evidence_source": [
+        "dpkg -L ffmpeg",
+        "/usr/share/ffmpeg/libvpx-720p.ffpreset"
+      ],
+      "derivation_notes": "Derivada de un preset fisico empaquetado con el sistema.",
+      "semantic_granularity": "pattern_preset",
+      "cost_class": "cpu",
+      "engine_action": "encode_webm_720p",
+      "mini_number": 160,
+      "mini_name": "Mini 160 #2FBF71",
+      "input_schema_path": "schemas/video_encode_webm_720p.input.json",
+      "output_schema_path": "schemas/video_encode_webm_720p.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "video",
+      "mime_family": "video/*",
+      "allowed_extensions": [
+        "webm"
+      ]
+    },
+    {
+      "skill_key": "video_encode_webm_1080p",
+      "input": "video",
+      "process": "encode_webm_1080p",
+      "output": "webm",
+      "input_types": [
+        "video"
+      ],
+      "output_types": [
+        "webm"
+      ],
+      "source_module": "ffmpeg.presets",
+      "source_symbol": "libvpx-1080p.ffpreset",
+      "source_kind": "preset_file",
+      "classification": "pattern",
+      "description": "Aplica el preset fisico de FFmpeg para codificacion WebM 1080p.",
+      "evidence_source": [
+        "dpkg -L ffmpeg",
+        "/usr/share/ffmpeg/libvpx-1080p.ffpreset"
+      ],
+      "derivation_notes": "Derivada de un preset fisico empaquetado con el sistema.",
+      "semantic_granularity": "pattern_preset",
+      "cost_class": "cpu",
+      "engine_action": "encode_webm_1080p",
+      "mini_number": 158,
+      "mini_name": "Mini 158 #2FBF71",
+      "input_schema_path": "schemas/video_encode_webm_1080p.input.json",
+      "output_schema_path": "schemas/video_encode_webm_1080p.output.json",
+      "input_type": "file_path",
+      "output_type": "file_path",
+      "artifact_kind": "video",
+      "mime_family": "video/*",
+      "allowed_extensions": [
+        "webm"
+      ]
+    }
+  ],
+  "skills_count": 48,
+  "core_skills_count": 45,
+  "pattern_skills_count": 3,
+  "skill_action_map": {
+    "audio_convert_audio": "convert_audio",
+    "audio_decode_stream": "decode_audio",
+    "audio_encode_mp3": "encode_audio",
+    "audio_encode_wav": "encode_audio",
+    "audio_filter_audio": "filter_audio",
+    "audio_map_output": "map_audio",
+    "audio_merge_audio": "merge_audio",
+    "audio_mix_audio": "mix_audio",
+    "audio_resample_audio": "resample_audio",
+    "audio_trim_audio": "trim_audio",
+    "audio_volume_audio": "adjust_audio_volume",
+    "concat_script_concatenate_media": "concatenate_media",
+    "frame_encode_image": "encode_image",
+    "image_convert_image": "convert_image",
+    "image_decode_frame": "decode_image",
+    "image_encode_apng": "encode_image",
+    "image_encode_gif": "encode_image",
+    "image_sequence_encode_video": "encode_video_from_images",
+    "media_compose_filtergraph_media": "compose_filtergraph",
+    "media_loop_media": "loop_media",
+    "media_package_dash_playlist": "package_dash",
+    "media_package_hls_playlist": "package_hls",
+    "media_remux_media": "remux_media",
+    "metadata_copy_media": "copy_metadata",
+    "metadata_write_media": "write_metadata",
+    "progress_report_status": "report_progress",
+    "stream_copy_stream": "copy_stream",
+    "stream_encode_audio": "encode_audio",
+    "stream_encode_video": "encode_video",
+    "stream_forward_stream": "forward_stream",
+    "subtitle_burn_video": "burn_subtitles",
+    "video_accelerate_decode_stream": "accelerate_video_decode",
+    "video_convert_video": "convert_video",
+    "video_crop_video": "crop_video",
+    "video_decode_stream": "decode_video",
+    "video_encode_mp4": "encode_video",
+    "video_encode_webm": "encode_video",
+    "video_encode_webm_1080p": "encode_webm_1080p",
+    "video_encode_webm_360p": "encode_webm_360p",
+    "video_encode_webm_720p": "encode_webm_720p",
+    "video_extract_audio": "extract_audio",
+    "video_extract_image": "extract_image",
+    "video_filter_video": "filter_video",
+    "video_map_output": "map_video",
+    "video_overlay_video": "overlay_video",
+    "video_rate_video": "change_video_framerate",
+    "video_scale_video": "scale_video",
+    "video_trim_video": "trim_video"
+  },
+  "materialization_status": "materialized",
+  "materialized_skills_count": 52,
+  "mini_number_start": 109,
+  "mini_number_end": 160,
+  "registered_skills_count": 52,
+  "active_skills": [
+    "audio_convert_audio",
+    "audio_decode_stream",
+    "audio_encode_mp3",
+    "audio_encode_wav",
+    "audio_filter_audio",
+    "audio_map_output",
+    "audio_merge_audio",
+    "audio_mix_audio",
+    "audio_resample_audio",
+    "audio_trim_audio",
+    "audio_volume_audio",
+    "concat_script_concatenate_media",
+    "frame_encode_image",
+    "image_convert_image",
+    "image_decode_frame",
+    "image_encode_apng",
+    "image_encode_gif",
+    "image_encode_image_sequence",
+    "image_sequence_encode_video",
+    "media_compose_filtergraph_media",
+    "media_duplicate_outputs_stream",
+    "media_loop_media",
+    "media_package_dash_playlist",
+    "media_package_hls_playlist",
+    "media_remux_media",
+    "media_segment_segment_set",
+    "media_stream_stream",
+    "metadata_copy_media",
+    "metadata_write_media",
+    "progress_report_status",
+    "stream_copy_stream",
+    "stream_encode_audio",
+    "stream_encode_video",
+    "stream_forward_stream",
+    "subtitle_burn_video",
+    "video_accelerate_decode_stream",
+    "video_convert_video",
+    "video_crop_video",
+    "video_decode_stream",
+    "video_encode_mp4",
+    "video_encode_webm",
+    "video_extract_audio",
+    "video_extract_image",
+    "video_filter_video",
+    "video_map_output",
+    "video_overlay_video",
+    "video_rate_video",
+    "video_scale_video",
+    "video_trim_video",
+    "video_encode_webm_1080p",
+    "video_encode_webm_360p",
+    "video_encode_webm_720p"
+  ],
+  "materialized_skills_core": [
+    {
+      "skill_key": "audio_convert_audio",
+      "mini_number": 109,
+      "mini_name": "Mini 109 #2FBF71",
+      "engine_action": "convert_audio",
+      "classification": "core"
+    },
+    {
+      "skill_key": "audio_decode_stream",
+      "mini_number": 110,
+      "mini_name": "Mini 110 #2FBF71",
+      "engine_action": "decode_audio",
+      "classification": "core"
+    },
+    {
+      "skill_key": "audio_encode_mp3",
+      "mini_number": 111,
+      "mini_name": "Mini 111 #2FBF71",
+      "engine_action": "encode_audio",
+      "classification": "core"
+    },
+    {
+      "skill_key": "audio_encode_wav",
+      "mini_number": 112,
+      "mini_name": "Mini 112 #2FBF71",
+      "engine_action": "encode_audio",
+      "classification": "core"
+    },
+    {
+      "skill_key": "audio_filter_audio",
+      "mini_number": 113,
+      "mini_name": "Mini 113 #2FBF71",
+      "engine_action": "filter_audio",
+      "classification": "core"
+    },
+    {
+      "skill_key": "audio_map_output",
+      "mini_number": 114,
+      "mini_name": "Mini 114 #2FBF71",
+      "engine_action": "map_audio",
+      "classification": "core"
+    },
+    {
+      "skill_key": "audio_merge_audio",
+      "mini_number": 115,
+      "mini_name": "Mini 115 #2FBF71",
+      "engine_action": "merge_audio",
+      "classification": "core"
+    },
+    {
+      "skill_key": "audio_mix_audio",
+      "mini_number": 116,
+      "mini_name": "Mini 116 #2FBF71",
+      "engine_action": "mix_audio",
+      "classification": "core"
+    },
+    {
+      "skill_key": "audio_resample_audio",
+      "mini_number": 117,
+      "mini_name": "Mini 117 #2FBF71",
+      "engine_action": "resample_audio",
+      "classification": "core"
+    },
+    {
+      "skill_key": "audio_trim_audio",
+      "mini_number": 118,
+      "mini_name": "Mini 118 #2FBF71",
+      "engine_action": "trim_audio",
+      "classification": "core"
+    },
+    {
+      "skill_key": "audio_volume_audio",
+      "mini_number": 119,
+      "mini_name": "Mini 119 #2FBF71",
+      "engine_action": "adjust_audio_volume",
+      "classification": "core"
+    },
+    {
+      "skill_key": "concat_script_concatenate_media",
+      "mini_number": 120,
+      "mini_name": "Mini 120 #2FBF71",
+      "engine_action": "concatenate_media",
+      "classification": "core"
+    },
+    {
+      "skill_key": "frame_encode_image",
+      "mini_number": 121,
+      "mini_name": "Mini 121 #2FBF71",
+      "engine_action": "encode_image",
+      "classification": "core"
+    },
+    {
+      "skill_key": "image_convert_image",
+      "mini_number": 122,
+      "mini_name": "Mini 122 #2FBF71",
+      "engine_action": "convert_image",
+      "classification": "core"
+    },
+    {
+      "skill_key": "image_decode_frame",
+      "mini_number": 123,
+      "mini_name": "Mini 123 #2FBF71",
+      "engine_action": "decode_image",
+      "classification": "core"
+    },
+    {
+      "skill_key": "image_encode_apng",
+      "mini_number": 124,
+      "mini_name": "Mini 124 #2FBF71",
+      "engine_action": "encode_image",
+      "classification": "core"
+    },
+    {
+      "skill_key": "image_encode_gif",
+      "mini_number": 125,
+      "mini_name": "Mini 125 #2FBF71",
+      "engine_action": "encode_image",
+      "classification": "core"
+    },
+    {
+      "skill_key": "image_encode_image_sequence",
+      "mini_number": 126,
+      "mini_name": "Mini 126 #2FBF71",
+      "engine_action": "encode_image",
+      "classification": "core"
+    },
+    {
+      "skill_key": "image_sequence_encode_video",
+      "mini_number": 127,
+      "mini_name": "Mini 127 #2FBF71",
+      "engine_action": "encode_video_from_images",
+      "classification": "core"
+    },
+    {
+      "skill_key": "media_compose_filtergraph_media",
+      "mini_number": 128,
+      "mini_name": "Mini 128 #2FBF71",
+      "engine_action": "compose_filtergraph",
+      "classification": "core"
+    },
+    {
+      "skill_key": "media_duplicate_outputs_stream",
+      "mini_number": 129,
+      "mini_name": "Mini 129 #2FBF71",
+      "engine_action": "duplicate_outputs",
+      "classification": "core"
+    },
+    {
+      "skill_key": "media_loop_media",
+      "mini_number": 130,
+      "mini_name": "Mini 130 #2FBF71",
+      "engine_action": "loop_media",
+      "classification": "core"
+    },
+    {
+      "skill_key": "media_package_dash_playlist",
+      "mini_number": 131,
+      "mini_name": "Mini 131 #2FBF71",
+      "engine_action": "package_dash",
+      "classification": "core"
+    },
+    {
+      "skill_key": "media_package_hls_playlist",
+      "mini_number": 132,
+      "mini_name": "Mini 132 #2FBF71",
+      "engine_action": "package_hls",
+      "classification": "core"
+    },
+    {
+      "skill_key": "media_remux_media",
+      "mini_number": 133,
+      "mini_name": "Mini 133 #2FBF71",
+      "engine_action": "remux_media",
+      "classification": "core"
+    },
+    {
+      "skill_key": "media_segment_segment_set",
+      "mini_number": 134,
+      "mini_name": "Mini 134 #2FBF71",
+      "engine_action": "segment_media",
+      "classification": "core"
+    },
+    {
+      "skill_key": "media_stream_stream",
+      "mini_number": 135,
+      "mini_name": "Mini 135 #2FBF71",
+      "engine_action": "stream_media",
+      "classification": "core"
+    },
+    {
+      "skill_key": "metadata_copy_media",
+      "mini_number": 136,
+      "mini_name": "Mini 136 #2FBF71",
+      "engine_action": "copy_metadata",
+      "classification": "core"
+    },
+    {
+      "skill_key": "metadata_write_media",
+      "mini_number": 137,
+      "mini_name": "Mini 137 #2FBF71",
+      "engine_action": "write_metadata",
+      "classification": "core"
+    },
+    {
+      "skill_key": "progress_report_status",
+      "mini_number": 138,
+      "mini_name": "Mini 138 #2FBF71",
+      "engine_action": "report_progress",
+      "classification": "core"
+    },
+    {
+      "skill_key": "stream_copy_stream",
+      "mini_number": 139,
+      "mini_name": "Mini 139 #2FBF71",
+      "engine_action": "copy_stream",
+      "classification": "core"
+    },
+    {
+      "skill_key": "stream_encode_audio",
+      "mini_number": 140,
+      "mini_name": "Mini 140 #2FBF71",
+      "engine_action": "encode_audio",
+      "classification": "core"
+    },
+    {
+      "skill_key": "stream_encode_video",
+      "mini_number": 141,
+      "mini_name": "Mini 141 #2FBF71",
+      "engine_action": "encode_video",
+      "classification": "core"
+    },
+    {
+      "skill_key": "stream_forward_stream",
+      "mini_number": 142,
+      "mini_name": "Mini 142 #2FBF71",
+      "engine_action": "forward_stream",
+      "classification": "core"
+    },
+    {
+      "skill_key": "subtitle_burn_video",
+      "mini_number": 143,
+      "mini_name": "Mini 143 #2FBF71",
+      "engine_action": "burn_subtitles",
+      "classification": "core"
+    },
+    {
+      "skill_key": "video_accelerate_decode_stream",
+      "mini_number": 144,
+      "mini_name": "Mini 144 #2FBF71",
+      "engine_action": "accelerate_video_decode",
+      "classification": "core"
+    },
+    {
+      "skill_key": "video_convert_video",
+      "mini_number": 145,
+      "mini_name": "Mini 145 #2FBF71",
+      "engine_action": "convert_video",
+      "classification": "core"
+    },
+    {
+      "skill_key": "video_crop_video",
+      "mini_number": 146,
+      "mini_name": "Mini 146 #2FBF71",
+      "engine_action": "crop_video",
+      "classification": "core"
+    },
+    {
+      "skill_key": "video_decode_stream",
+      "mini_number": 147,
+      "mini_name": "Mini 147 #2FBF71",
+      "engine_action": "decode_video",
+      "classification": "core"
+    },
+    {
+      "skill_key": "video_encode_mp4",
+      "mini_number": 148,
+      "mini_name": "Mini 148 #2FBF71",
+      "engine_action": "encode_video",
+      "classification": "core"
+    },
+    {
+      "skill_key": "video_encode_webm",
+      "mini_number": 149,
+      "mini_name": "Mini 149 #2FBF71",
+      "engine_action": "encode_video",
+      "classification": "core"
+    },
+    {
+      "skill_key": "video_extract_audio",
+      "mini_number": 150,
+      "mini_name": "Mini 150 #2FBF71",
+      "engine_action": "extract_audio",
+      "classification": "core"
+    },
+    {
+      "skill_key": "video_extract_image",
+      "mini_number": 151,
+      "mini_name": "Mini 151 #2FBF71",
+      "engine_action": "extract_image",
+      "classification": "core"
+    },
+    {
+      "skill_key": "video_filter_video",
+      "mini_number": 152,
+      "mini_name": "Mini 152 #2FBF71",
+      "engine_action": "filter_video",
+      "classification": "core"
+    },
+    {
+      "skill_key": "video_map_output",
+      "mini_number": 153,
+      "mini_name": "Mini 153 #2FBF71",
+      "engine_action": "map_video",
+      "classification": "core"
+    },
+    {
+      "skill_key": "video_overlay_video",
+      "mini_number": 154,
+      "mini_name": "Mini 154 #2FBF71",
+      "engine_action": "overlay_video",
+      "classification": "core"
+    },
+    {
+      "skill_key": "video_rate_video",
+      "mini_number": 155,
+      "mini_name": "Mini 155 #2FBF71",
+      "engine_action": "change_video_framerate",
+      "classification": "core"
+    },
+    {
+      "skill_key": "video_scale_video",
+      "mini_number": 156,
+      "mini_name": "Mini 156 #2FBF71",
+      "engine_action": "scale_video",
+      "classification": "core"
+    },
+    {
+      "skill_key": "video_trim_video",
+      "mini_number": 157,
+      "mini_name": "Mini 157 #2FBF71",
+      "engine_action": "trim_video",
+      "classification": "core"
+    }
+  ],
+  "materialized_skills_patterns": [
+    {
+      "skill_key": "video_encode_webm_1080p",
+      "mini_number": 158,
+      "mini_name": "Mini 158 #2FBF71",
+      "engine_action": "encode_webm_1080p",
+      "classification": "pattern"
+    },
+    {
+      "skill_key": "video_encode_webm_360p",
+      "mini_number": 159,
+      "mini_name": "Mini 159 #2FBF71",
+      "engine_action": "encode_webm_360p",
+      "classification": "pattern"
+    },
+    {
+      "skill_key": "video_encode_webm_720p",
+      "mini_number": 160,
+      "mini_name": "Mini 160 #2FBF71",
+      "engine_action": "encode_webm_720p",
+      "classification": "pattern"
+    }
+  ],
+  "cost_class_summary": {
+    "cpu": 41,
+    "io": 8,
+    "network": 2,
+    "gpu": 1
+  },
+  "worker_balance_strategy": "round_robin",
+  "compatibility_mode": "universal_exact_type_match",
+  "certification_scope": "state_30_certified_active_view"
+}

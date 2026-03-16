@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "subtitle_burn_video input",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "input_file": {
+      "type": "string",
+      "description": "Primary video source path or URL."
+    },
+    "subtitles_file": {
+      "type": "string"
+    },
+    "output_file": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "input_file",
+    "output_file",
+    "subtitles_file"
+  ]
+}

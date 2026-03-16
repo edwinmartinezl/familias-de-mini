@@ -1,0 +1,21 @@
+mini_number: 117
+mini_name: 'Mini 117 #2FBF71'
+family_type: ffmpeg
+family_color_hex: '#2FBF71'
+skill_key: audio_resample_audio
+classification: core
+cost_class: cpu
+engine_action: resample_audio
+input_schema: ../schemas/audio_resample_audio.input.json
+output_schema: ../schemas/audio_resample_audio.output.json
+description: Re-muestrea audio a otra frecuencia o configuracion compatible.
+source_module: ffmpeg.filters
+source_symbol: aresample
+source_kind: filter
+evidence_source:
+- ffmpeg -filters
+derivation_notes: Derivada del filtro aresample con firma A->A.
+input_type: file_path
+output_type: file_path
+artifact_kind: audio
+mime_family: audio/*

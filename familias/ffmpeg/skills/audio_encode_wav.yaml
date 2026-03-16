@@ -1,0 +1,25 @@
+mini_number: 112
+mini_name: 'Mini 112 #2FBF71'
+family_type: ffmpeg
+family_color_hex: '#2FBF71'
+skill_key: audio_encode_wav
+classification: core
+cost_class: cpu
+engine_action: encode_audio
+input_schema: ../schemas/audio_encode_wav.input.json
+output_schema: ../schemas/audio_encode_wav.output.json
+description: Genera una salida WAV desde audio de entrada.
+source_module: ffmpeg.formats
+source_symbol: wav
+source_kind: format_registry
+evidence_source:
+- ffmpeg -formats
+- ffmpeg -h full
+derivation_notes: Derivada del formato WAV con soporte de muxing y de las opciones
+  publicas de codec de audio.
+input_type: file_path
+output_type: file_path
+artifact_kind: audio
+mime_family: audio/*
+allowed_extensions:
+- wav

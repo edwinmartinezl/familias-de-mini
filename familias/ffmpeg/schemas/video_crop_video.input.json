@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "video_crop_video input",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "input_file": {
+      "type": "string",
+      "description": "Primary video source path or URL."
+    },
+    "output_file": {
+      "type": "string"
+    },
+    "width": {
+      "type": [
+        "integer",
+        "string"
+      ]
+    },
+    "height": {
+      "type": [
+        "integer",
+        "string"
+      ]
+    },
+    "x": {
+      "type": [
+        "integer",
+        "string"
+      ]
+    },
+    "y": {
+      "type": [
+        "integer",
+        "string"
+      ]
+    }
+  },
+  "required": [
+    "height",
+    "input_file",
+    "output_file",
+    "width"
+  ]
+}

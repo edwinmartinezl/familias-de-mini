@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "progress_report_status input",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "input_file": {
+      "type": "string",
+      "description": "Primary media source path or URL."
+    },
+    "progress_url": {
+      "type": "string"
+    },
+    "output_file": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "input_file",
+    "output_file",
+    "progress_url"
+  ]
+}

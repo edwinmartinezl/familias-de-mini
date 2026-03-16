@@ -1,0 +1,25 @@
+mini_number: 148
+mini_name: 'Mini 148 #2FBF71'
+family_type: ffmpeg
+family_color_hex: '#2FBF71'
+skill_key: video_encode_mp4
+classification: core
+cost_class: cpu
+engine_action: encode_video
+input_schema: ../schemas/video_encode_mp4.input.json
+output_schema: ../schemas/video_encode_mp4.output.json
+description: Genera una salida MP4 desde video de entrada.
+source_module: ffmpeg.formats
+source_symbol: mp4
+source_kind: format_registry
+evidence_source:
+- ffmpeg -formats
+- ffmpeg -h full
+derivation_notes: Derivada del formato MP4 con soporte de muxing y de las opciones
+  publicas de video codec.
+input_type: file_path
+output_type: file_path
+artifact_kind: video
+mime_family: video/*
+allowed_extensions:
+- mp4

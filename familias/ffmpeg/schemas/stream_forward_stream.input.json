@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "stream_forward_stream input",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "input_file": {
+      "type": "string",
+      "description": "Primary stream source path or URL."
+    },
+    "stream_target": {
+      "type": "string",
+      "description": "Target stream URL."
+    },
+    "format": {
+      "type": "string"
+    },
+    "copy_stream": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "input_file",
+    "stream_target"
+  ]
+}

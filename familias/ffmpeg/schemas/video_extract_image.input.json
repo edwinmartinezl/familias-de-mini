@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "video_extract_image input",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "input_file": {
+      "type": "string",
+      "description": "Primary video source path or URL."
+    },
+    "output_file": {
+      "type": "string"
+    },
+    "vframes": {
+      "type": "integer",
+      "minimum": 1
+    }
+  },
+  "required": [
+    "input_file",
+    "output_file"
+  ]
+}

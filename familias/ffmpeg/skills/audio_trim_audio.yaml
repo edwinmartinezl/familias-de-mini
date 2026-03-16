@@ -1,0 +1,21 @@
+mini_number: 118
+mini_name: 'Mini 118 #2FBF71'
+family_type: ffmpeg
+family_color_hex: '#2FBF71'
+skill_key: audio_trim_audio
+classification: core
+cost_class: cpu
+engine_action: trim_audio
+input_schema: ../schemas/audio_trim_audio.input.json
+output_schema: ../schemas/audio_trim_audio.output.json
+description: Recorta un segmento continuo de audio.
+source_module: ffmpeg.filters
+source_symbol: atrim
+source_kind: filter
+evidence_source:
+- ffmpeg -filters
+derivation_notes: Derivada del filtro atrim con firma A->A.
+input_type: file_path
+output_type: file_path
+artifact_kind: audio
+mime_family: audio/*

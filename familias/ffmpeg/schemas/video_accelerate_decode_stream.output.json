@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "video_accelerate_decode_stream output",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "job_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "completed",
+        "failed"
+      ]
+    },
+    "output": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "target": {
+          "type": "string"
+        },
+        "return_code": {
+          "type": "integer"
+        },
+        "stdout": {
+          "type": "string"
+        },
+        "stderr": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string",
+          "const": "stream"
+        }
+      },
+      "required": [
+        "target",
+        "return_code",
+        "stdout",
+        "stderr",
+        "kind"
+      ]
+    },
+    "trace": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "source_module": {
+          "type": "string"
+        },
+        "source_symbol": {
+          "type": "string"
+        },
+        "classification": {
+          "type": "string"
+        },
+        "skill_key": {
+          "type": "string"
+        },
+        "cost_class": {
+          "type": "string",
+          "enum": [
+            "cpu",
+            "io",
+            "network",
+            "gpu"
+          ]
+        }
+      },
+      "required": [
+        "source_module",
+        "source_symbol",
+        "classification",
+        "skill_key"
+      ]
+    }
+  },
+  "required": [
+    "state",
+    "output",
+    "trace"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "family_type": "ffmpeg",
+  "exported_at": "2026-03-12T21:33:24.468261+00:00",
+  "certified_minis_count": 48,
+  "exiled_minis_count": 4,
+  "certified_base_flows_count": 48,
+  "exiled_base_flows_count": 4,
+  "certified_intra_family_edges_count": 1967,
+  "exiled_intra_family_edges_count": 529,
+  "exiled_minis": [
+    "image_encode_image_sequence",
+    "media_duplicate_outputs_stream",
+    "media_segment_segment_set",
+    "media_stream_stream"
+  ],
+  "exiled_base_flows": [
+    "image_encode_image_sequence",
+    "media_duplicate_outputs_stream",
+    "media_segment_segment_set",
+    "media_stream_stream"
+  ]
+}

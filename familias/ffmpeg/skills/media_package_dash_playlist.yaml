@@ -1,0 +1,25 @@
+mini_number: 131
+mini_name: 'Mini 131 #2FBF71'
+family_type: ffmpeg
+family_color_hex: '#2FBF71'
+skill_key: media_package_dash_playlist
+classification: core
+cost_class: io
+engine_action: package_dash
+input_schema: ../schemas/media_package_dash_playlist.input.json
+output_schema: ../schemas/media_package_dash_playlist.output.json
+description: Empaqueta media en manifiestos y segmentos MPEG-DASH.
+source_module: ffmpeg.muxers
+source_symbol: dash
+source_kind: muxer
+evidence_source:
+- ffmpeg -formats
+- ffmpeg -h muxer=dash
+derivation_notes: Derivada del muxer dash con opciones publicas de segmentacion, manifest
+  y baja latencia.
+input_type: file_path
+output_type: file_path
+artifact_kind: playlist
+mime_family: application/*
+allowed_extensions:
+- mpd

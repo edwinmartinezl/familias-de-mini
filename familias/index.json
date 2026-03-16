@@ -1,0 +1,12 @@
+[
+  {
+    "family_key": "ffmpeg",
+    "display_name": "FFmpeg",
+    "status": "certified",
+    "published_at": "2026-03-15",
+    "path": "familias/ffmpeg",
+    "certified_minis_count": 48,
+    "certified_base_flows_count": 48,
+    "exiled_minis_count": 4
+  }
+]

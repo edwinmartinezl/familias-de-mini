@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "audio_filter_audio input",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "input_file": {
+      "type": "string",
+      "description": "Primary audio source path or URL."
+    },
+    "output_file": {
+      "type": "string"
+    },
+    "audio_filter": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "audio_filter",
+    "input_file",
+    "output_file"
+  ]
+}

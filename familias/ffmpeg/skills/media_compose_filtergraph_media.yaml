@@ -1,0 +1,21 @@
+mini_number: 128
+mini_name: 'Mini 128 #2FBF71'
+family_type: ffmpeg
+family_color_hex: '#2FBF71'
+skill_key: media_compose_filtergraph_media
+classification: core
+cost_class: cpu
+engine_action: compose_filtergraph
+input_schema: ../schemas/media_compose_filtergraph_media.input.json
+output_schema: ../schemas/media_compose_filtergraph_media.output.json
+description: Compone un filtergraph complejo sobre multiples flujos de media.
+source_module: ffmpeg.cli
+source_symbol: -filter_complex
+source_kind: cli_option
+evidence_source:
+- ffmpeg -h full
+derivation_notes: Derivada de las opciones publicas -filter_complex y -lavfi.
+input_type: file_path
+output_type: file_path
+artifact_kind: media
+mime_family: application/*

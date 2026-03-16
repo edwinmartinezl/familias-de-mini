@@ -1,0 +1,24 @@
+mini_number: 124
+mini_name: 'Mini 124 #2FBF71'
+family_type: ffmpeg
+family_color_hex: '#2FBF71'
+skill_key: image_encode_apng
+classification: core
+cost_class: cpu
+engine_action: encode_image
+input_schema: ../schemas/image_encode_apng.input.json
+output_schema: ../schemas/image_encode_apng.output.json
+description: Genera una salida APNG desde imagenes o frames de entrada.
+source_module: ffmpeg.formats
+source_symbol: apng
+source_kind: format_registry
+evidence_source:
+- ffmpeg -formats
+- ffmpeg -codecs
+derivation_notes: Derivada del formato APNG con soporte de demuxing y muxing.
+input_type: file_path
+output_type: file_path
+artifact_kind: image
+mime_family: image/*
+allowed_extensions:
+- apng

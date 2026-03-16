@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "media_loop_media input",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "input_file": {
+      "type": "string",
+      "description": "Primary media source path or URL."
+    },
+    "output_file": {
+      "type": "string"
+    },
+    "stream_loop": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "input_file",
+    "output_file",
+    "stream_loop"
+  ]
+}

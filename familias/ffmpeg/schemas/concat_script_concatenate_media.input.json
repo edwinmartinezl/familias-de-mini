@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "concat_script_concatenate_media input",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "concat_script": {
+      "type": "string"
+    },
+    "output_file": {
+      "type": "string"
+    },
+    "safe": {
+      "type": [
+        "integer",
+        "boolean"
+      ]
+    }
+  },
+  "required": [
+    "concat_script",
+    "output_file"
+  ]
+}

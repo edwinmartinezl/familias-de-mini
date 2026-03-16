@@ -1,0 +1,22 @@
+mini_number: 156
+mini_name: 'Mini 156 #2FBF71'
+family_type: ffmpeg
+family_color_hex: '#2FBF71'
+skill_key: video_scale_video
+classification: core
+cost_class: cpu
+engine_action: scale_video
+input_schema: ../schemas/video_scale_video.input.json
+output_schema: ../schemas/video_scale_video.output.json
+description: Escala video a otro tamano o resolucion.
+source_module: ffmpeg.filters
+source_symbol: scale
+source_kind: filter
+evidence_source:
+- ffmpeg -h filter=scale
+- ffmpeg -filters
+derivation_notes: Derivada del filtro scale con opciones publicas de width y height.
+input_type: file_path
+output_type: file_path
+artifact_kind: video
+mime_family: video/*

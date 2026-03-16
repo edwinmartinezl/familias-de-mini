@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "media_compose_filtergraph_media input",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "input_file": {
+      "type": "string",
+      "description": "Primary input source path or URL."
+    },
+    "filter_graph": {
+      "type": "string"
+    },
+    "output_file": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "filter_graph",
+    "input_file",
+    "output_file"
+  ]
+}

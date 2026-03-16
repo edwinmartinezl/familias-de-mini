@@ -1,0 +1,21 @@
+mini_number: 123
+mini_name: 'Mini 123 #2FBF71'
+family_type: ffmpeg
+family_color_hex: '#2FBF71'
+skill_key: image_decode_frame
+classification: core
+cost_class: cpu
+engine_action: decode_image
+input_schema: ../schemas/image_decode_frame.input.json
+output_schema: ../schemas/image_decode_frame.output.json
+description: Decodifica imagenes hacia frames internos para procesamiento posterior.
+source_module: ffmpeg.codecs
+source_symbol: image codecs
+source_kind: codec_registry
+evidence_source:
+- ffmpeg -codecs
+- ffmpeg -formats
+derivation_notes: Derivada de codecs y formatos de imagen instalados como bmp, apng,
+  dpx y exr.
+input_type: file_path
+output_type: json

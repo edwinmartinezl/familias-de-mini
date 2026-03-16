@@ -1,0 +1,24 @@
+mini_number: 159
+mini_name: 'Mini 159 #2FBF71'
+family_type: ffmpeg
+family_color_hex: '#2FBF71'
+skill_key: video_encode_webm_360p
+classification: pattern
+cost_class: cpu
+engine_action: encode_webm_360p
+input_schema: ../schemas/video_encode_webm_360p.input.json
+output_schema: ../schemas/video_encode_webm_360p.output.json
+description: Aplica el preset fisico de FFmpeg para codificacion WebM 360p.
+source_module: ffmpeg.presets
+source_symbol: libvpx-360p.ffpreset
+source_kind: preset_file
+evidence_source:
+- dpkg -L ffmpeg
+- /usr/share/ffmpeg/libvpx-360p.ffpreset
+derivation_notes: Derivada de un preset fisico empaquetado con el sistema.
+input_type: file_path
+output_type: file_path
+artifact_kind: video
+mime_family: video/*
+allowed_extensions:
+- webm

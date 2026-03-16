@@ -1,0 +1,22 @@
+mini_number: 121
+mini_name: 'Mini 121 #2FBF71'
+family_type: ffmpeg
+family_color_hex: '#2FBF71'
+skill_key: frame_encode_image
+classification: core
+cost_class: cpu
+engine_action: encode_image
+input_schema: ../schemas/frame_encode_image.input.json
+output_schema: ../schemas/frame_encode_image.output.json
+description: Codifica frames hacia salidas de imagen.
+source_module: ffmpeg.codecs
+source_symbol: image encoders
+source_kind: codec_registry
+evidence_source:
+- ffmpeg -codecs
+- ffmpeg -formats
+derivation_notes: Derivada de formatos y codecs de imagen con soporte de codificacion.
+input_type: file_path
+output_type: file_path
+artifact_kind: image
+mime_family: image/*

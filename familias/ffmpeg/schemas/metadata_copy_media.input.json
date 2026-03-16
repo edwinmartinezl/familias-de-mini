@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "metadata_copy_media input",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "input_file": {
+      "type": "string",
+      "description": "Primary media source path or URL."
+    },
+    "map_metadata": {
+      "type": "string"
+    },
+    "output_file": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "input_file",
+    "map_metadata",
+    "output_file"
+  ]
+}

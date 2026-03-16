@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "image_sequence_encode_video input",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "input_file": {
+      "type": "string",
+      "description": "Pattern or manifest for image sequence input."
+    },
+    "output_file": {
+      "type": "string"
+    },
+    "video_codec": {
+      "type": "string"
+    },
+    "frame_rate": {
+      "type": [
+        "number",
+        "string"
+      ]
+    },
+    "format": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "input_file",
+    "output_file"
+  ]
+}

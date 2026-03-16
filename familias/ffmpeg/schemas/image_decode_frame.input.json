@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "image_decode_frame input",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "input_file": {
+      "type": "string",
+      "description": "Primary image source path or URL."
+    },
+    "output_file": {
+      "type": "string",
+      "description": "Output image path."
+    },
+    "vframes": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Number of frames to decode."
+    }
+  },
+  "required": [
+    "input_file",
+    "output_file"
+  ]
+}

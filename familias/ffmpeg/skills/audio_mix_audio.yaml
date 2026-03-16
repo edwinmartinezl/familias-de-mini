@@ -1,0 +1,23 @@
+mini_number: 116
+mini_name: 'Mini 116 #2FBF71'
+family_type: ffmpeg
+family_color_hex: '#2FBF71'
+skill_key: audio_mix_audio
+classification: core
+cost_class: cpu
+engine_action: mix_audio
+input_schema: ../schemas/audio_mix_audio.input.json
+output_schema: ../schemas/audio_mix_audio.output.json
+description: Mezcla varias entradas de audio en una sola salida.
+source_module: ffmpeg.filters
+source_symbol: amix
+source_kind: filter
+evidence_source:
+- ffmpeg -h filter=amix
+- ffmpeg -filters
+derivation_notes: Derivada del filtro amix con entradas dinamicas y salida unica de
+  audio.
+input_type: file_path
+output_type: file_path
+artifact_kind: audio
+mime_family: audio/*

@@ -1,0 +1,25 @@
+mini_number: 149
+mini_name: 'Mini 149 #2FBF71'
+family_type: ffmpeg
+family_color_hex: '#2FBF71'
+skill_key: video_encode_webm
+classification: core
+cost_class: cpu
+engine_action: encode_video
+input_schema: ../schemas/video_encode_webm.input.json
+output_schema: ../schemas/video_encode_webm.output.json
+description: Genera una salida WebM desde video de entrada.
+source_module: ffmpeg.formats
+source_symbol: webm
+source_kind: format_registry
+evidence_source:
+- ffmpeg -formats
+- ffmpeg -h full
+derivation_notes: Derivada del formato WebM con soporte de muxing y de las opciones
+  publicas de video codec.
+input_type: file_path
+output_type: file_path
+artifact_kind: video
+mime_family: video/*
+allowed_extensions:
+- webm

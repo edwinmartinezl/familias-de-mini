@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "image_convert_image input",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "input_file": {
+      "type": "string",
+      "description": "Primary image source path or URL."
+    },
+    "output_file": {
+      "type": "string"
+    },
+    "format": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "input_file",
+    "output_file"
+  ]
+}

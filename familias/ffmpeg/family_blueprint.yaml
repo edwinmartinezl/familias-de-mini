@@ -1,0 +1,25 @@
+family_type: ffmpeg
+
+description: |
+  Motor especializado en procesamiento, transformacion y conversion
+  de medios audiovisuales usando FFmpeg.
+
+library_base: FFmpeg
+
+technology_type: cli_tool
+
+installation_source: apt
+
+installation_package: ffmpeg
+
+input_types:
+  - video
+  - audio
+  - image
+  - stream
+
+output_types:
+  - video
+  - audio
+  - image
+  - stream

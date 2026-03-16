@@ -1,0 +1,20 @@
+mini_number: 114
+mini_name: 'Mini 114 #2FBF71'
+family_type: ffmpeg
+family_color_hex: '#2FBF71'
+skill_key: audio_map_output
+classification: core
+cost_class: cpu
+engine_action: map_audio
+input_schema: ../schemas/audio_map_output.input.json
+output_schema: ../schemas/audio_map_output.output.json
+description: Selecciona y enruta streams de audio especificos hacia la salida.
+source_module: ffmpeg.cli
+source_symbol: -map
+source_kind: cli_option
+evidence_source:
+- ffmpeg -h full
+derivation_notes: Derivada de la opcion publica -map con stream specifiers para tipos
+  de stream.
+input_type: file_path
+output_type: json

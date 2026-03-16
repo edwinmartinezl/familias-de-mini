@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "media_package_dash_playlist input",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "input_file": {
+      "type": "string",
+      "description": "Primary media source path or URL."
+    },
+    "output_file": {
+      "type": "string",
+      "description": "Output MPD path."
+    },
+    "seg_duration": {
+      "type": [
+        "number",
+        "string"
+      ]
+    }
+  },
+  "required": [
+    "input_file",
+    "output_file"
+  ]
+}

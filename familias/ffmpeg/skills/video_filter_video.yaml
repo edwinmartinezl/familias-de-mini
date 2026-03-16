@@ -1,0 +1,23 @@
+mini_number: 152
+mini_name: 'Mini 152 #2FBF71'
+family_type: ffmpeg
+family_color_hex: '#2FBF71'
+skill_key: video_filter_video
+classification: core
+cost_class: cpu
+engine_action: filter_video
+input_schema: ../schemas/video_filter_video.input.json
+output_schema: ../schemas/video_filter_video.output.json
+description: Aplica un grafo de filtros de video a una entrada de video.
+source_module: ffmpeg.cli
+source_symbol: -vf
+source_kind: cli_option
+evidence_source:
+- ffmpeg -h full
+- ffmpeg -filters
+derivation_notes: Derivada de la opcion publica -vf y del registro de filtros de video
+  instalado.
+input_type: file_path
+output_type: file_path
+artifact_kind: video
+mime_family: video/*

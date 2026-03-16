@@ -1,0 +1,24 @@
+mini_number: 125
+mini_name: 'Mini 125 #2FBF71'
+family_type: ffmpeg
+family_color_hex: '#2FBF71'
+skill_key: image_encode_gif
+classification: core
+cost_class: cpu
+engine_action: encode_image
+input_schema: ../schemas/image_encode_gif.input.json
+output_schema: ../schemas/image_encode_gif.output.json
+description: Genera una salida GIF desde imagen o frame de entrada.
+source_module: ffmpeg.formats
+source_symbol: gif
+source_kind: format_registry
+evidence_source:
+- ffmpeg -formats
+- ffmpeg -codecs
+derivation_notes: Derivada del formato GIF con soporte de demuxing y muxing.
+input_type: file_path
+output_type: file_path
+artifact_kind: image
+mime_family: image/*
+allowed_extensions:
+- gif

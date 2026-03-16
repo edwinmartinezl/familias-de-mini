@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "metadata_write_media input",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "input_file": {
+      "type": "string",
+      "description": "Primary media source path or URL."
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "output_file": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "input_file",
+    "metadata",
+    "output_file"
+  ]
+}

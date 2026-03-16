@@ -1,0 +1,21 @@
+mini_number: 154
+mini_name: 'Mini 154 #2FBF71'
+family_type: ffmpeg
+family_color_hex: '#2FBF71'
+skill_key: video_overlay_video
+classification: core
+cost_class: cpu
+engine_action: overlay_video
+input_schema: ../schemas/video_overlay_video.input.json
+output_schema: ../schemas/video_overlay_video.output.json
+description: Superpone una fuente de video sobre otra.
+source_module: ffmpeg.filters
+source_symbol: overlay
+source_kind: filter
+evidence_source:
+- ffmpeg -filters
+derivation_notes: Derivada del filtro overlay con firma VV->V.
+input_type: file_path
+output_type: file_path
+artifact_kind: video
+mime_family: video/*

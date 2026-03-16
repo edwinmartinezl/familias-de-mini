@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "media_package_hls_playlist input",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "input_file": {
+      "type": "string",
+      "description": "Primary media source path or URL."
+    },
+    "output_file": {
+      "type": "string",
+      "description": "Output playlist path."
+    },
+    "hls_time": {
+      "type": [
+        "number",
+        "string"
+      ]
+    },
+    "hls_segment_filename": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "input_file",
+    "output_file"
+  ]
+}

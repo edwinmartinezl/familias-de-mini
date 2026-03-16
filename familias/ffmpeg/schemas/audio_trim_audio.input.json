@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "audio_trim_audio input",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "input_file": {
+      "type": "string",
+      "description": "Primary audio source path or URL."
+    },
+    "output_file": {
+      "type": "string"
+    },
+    "start": {
+      "type": [
+        "number",
+        "string"
+      ]
+    },
+    "end": {
+      "type": [
+        "number",
+        "string"
+      ]
+    }
+  },
+  "required": [
+    "input_file",
+    "output_file"
+  ]
+}

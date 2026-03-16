@@ -1,0 +1,21 @@
+mini_number: 119
+mini_name: 'Mini 119 #2FBF71'
+family_type: ffmpeg
+family_color_hex: '#2FBF71'
+skill_key: audio_volume_audio
+classification: core
+cost_class: cpu
+engine_action: adjust_audio_volume
+input_schema: ../schemas/audio_volume_audio.input.json
+output_schema: ../schemas/audio_volume_audio.output.json
+description: Ajusta el volumen del audio de entrada.
+source_module: ffmpeg.filters
+source_symbol: volume
+source_kind: filter
+evidence_source:
+- ffmpeg -filters
+derivation_notes: Derivada del filtro volume con firma A->A.
+input_type: file_path
+output_type: file_path
+artifact_kind: audio
+mime_family: audio/*

@@ -1,0 +1,23 @@
+mini_number: 120
+mini_name: 'Mini 120 #2FBF71'
+family_type: ffmpeg
+family_color_hex: '#2FBF71'
+skill_key: concat_script_concatenate_media
+classification: core
+cost_class: io
+engine_action: concatenate_media
+input_schema: ../schemas/concat_script_concatenate_media.input.json
+output_schema: ../schemas/concat_script_concatenate_media.output.json
+description: Concatena entradas segun un script ffconcat.
+source_module: ffmpeg.demuxers
+source_symbol: concat
+source_kind: demuxer
+evidence_source:
+- ffmpeg -formats
+- ffmpeg -h demuxer=concat
+derivation_notes: Derivada del demuxer concat y sus opciones publicas de seguridad
+  y conversion automatica.
+input_type: file_path
+output_type: file_path
+artifact_kind: media
+mime_family: application/*

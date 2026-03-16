@@ -1,0 +1,22 @@
+mini_number: 136
+mini_name: 'Mini 136 #2FBF71'
+family_type: ffmpeg
+family_color_hex: '#2FBF71'
+skill_key: metadata_copy_media
+classification: core
+cost_class: io
+engine_action: copy_metadata
+input_schema: ../schemas/metadata_copy_media.input.json
+output_schema: ../schemas/metadata_copy_media.output.json
+description: Copia metadata desde una entrada hacia una salida multimedia.
+source_module: ffmpeg.cli
+source_symbol: -map_metadata
+source_kind: cli_option
+evidence_source:
+- ffmpeg -h full
+derivation_notes: Derivada de la opcion publica -map_metadata para mapeo de metadata
+  entre archivos.
+input_type: file_path
+output_type: file_path
+artifact_kind: media
+mime_family: application/*

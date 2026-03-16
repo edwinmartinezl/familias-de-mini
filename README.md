@@ -25,6 +25,12 @@ certificadas. Aqui la narrativa y la tecnica se encuentran en una misma regla:
 una mini, un flow o una familia no viven publicamente por promesa, sino por
 evidencia.
 
+## Rostros Fundacionales
+
+| Mini One White | Mini One Black |
+| --- | --- |
+| ![Mini One White](assets/mini-one-white.png) | ![Mini One Black](assets/mini-one-black.png) |
+
 ## Que es una familia
 
 Una familia es un conjunto organizado de minis relacionadas por una misma
